@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    padding:0;
+    margin:0;
+    font-family: "Poppins",sans-serif;
+}
+.login-row{
+    margin-top:15%;
+}
+.takeorders-col{
+    background-color: #353537;
+    padding:50px;
+}
+.takeorders-h1{
+    text-align: center;
+    font-size:50px;
+    font-weight:600;
+    color:orangered;
+}
+label{
+    color:white;
+    margin-top:20px;
+}
+.form-control{
+    border-radius : 0px;
+    margin-top:5px;
+    padding:25px 20px;
+}
+.login-btn{
+    background-color: orangered;
+    color:white;
+    font-size:16px;
+    margin-top:20px;
+    padding:15px 40px;
+    border-radius:0px;
+}
+.login-btn:hover{
+    background-color: white;
+    color:orangered;
+    transition:0.7s;
+    border-bottom:2px solid orangered;
+}
+
+/* takeorder page  */
+.waiter-takeorder-h1{
+    font-size:30px;
+    font-weight: 600;
+}
+.takeorder-page-col{
+    margin-top:5%;
+}
+.mylabel{
+    color:black;
+}
+.myselect{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+}
+.new-item{
+    background-color:#353537;
+    color:white;
+    font-size:20px;
+    border-radius:0px;
+    padding:15px 40px;
+    margin-top:20px;
+}
+.new-item:hover{
+    background: #353537;
+    color:orangered;
+    transition:0.7s;
+}
+.order-btn{
+    background:green;
+    border:none;
+}
+.ordered_items{
+    padding:10px;
+    width:100%;
+}
+.order-h1{
+    font-size:24px;
+ 
+    margin-bottom:20px;
+}
+.item-table{
+    margin-top:20px;
+}
+
+.table-number{
+    background-color:#ffb3cc;
+    padding:30px;
+    border-radius:10px;
+}
+.mytable{
+    background-color: #b3e0ff;
+    padding:30px;
+    margin-top:20px;
+    border-radius:10px;
+}
+/* .navbar-toggler{
+    position:absolute;
+    right:50px;
+    top:30px;
+   margin-top:20px;
+   margin-bottom:20px;
+} */
+@media (max-width:500px)
+{
+    .takeorders-h1{
+        font-size:30px;
+    }
+    .takeorders-col{
+        padding:20px;
+    }
+    .login-row{
+        margin-left:10px;
+        margin-right:10px;
+        margin-top:40%;
+    }
+    .order-h1{
+        font-size:22px;
+        margin-top:0px;
+    }
+    .mytable{
+        padding:30px;  
+    }
+}

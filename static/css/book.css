@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+*{
+    padding:0px;
+    margin:0px;
+    font-family: 'Karla', sans-serif;
+}
+body{
+    background-color:#bbdaf6;
+}
+.book-container{
+    background-color:white;
+    border-radius: 10px;
+    height:100%;
+    margin-top:50px;
+}
+.book-header{
+    color:#4a9ce8;
+    text-align:center;
+    font-weight:600;
+    padding-top:30px;
+}
+.book-p{
+    text-align:center;
+    padding-top:0px;
+}
+.book-form{
+    padding-left:50px;
+    padding-right:50px;
+}
+.book-first-row{
+    padding-top:30px;
+}
+.book-second-row{
+    padding-top:20px;
+}
+.txtarea{
+    height:150px;
+    padding-bottom:40px;
+}
+.book-third-row{
+    padding-bottom:20px;
+    padding-top:20px;
+}
+.submit-btn{
+    text-align:right;
+    padding-bottom:30px;
+}
+.book-btn{
+    background-color:#4a9ce8;
+    color:white;
+}
+
+@media only screen and (max-width: 600px){
+    .book-form{
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .book-third-row{
+        padding-top:0px;
+    }
+    .book-second-row{
+        padding-top:0px;
+    }
+    .submit-btn{
+        text-align:center;
+        padding-bottom:30px;
+    }
+    .book-btn{
+        background-color:#4a9ce8;
+        color:white;
+    }
+    .book-container{
+        margin-bottom:50px;
+    }
+}

@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family:"Josefin Sans";
+}
+body{
+    background-color: #f2f2f3;
+}
+#banner{
+    background-color: #353537;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* navbar  */
+.logo{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.navbar{
+    padding-top:30px;
+}
+.navbar-brand{
+    color:white;
+}
+.left-banner{
+    margin-top:50px;
+}
+.nav-link{
+    color:white;
+}
+.nav-item{
+    margin-right:20px;
+}
+.login{
+    color:white;
+    font-weight:600;
+    font-size:15px;
+}
+.login:hover{
+    color:#ff471a;
+}
+.signup{
+    background-color:#ff471a;
+    color:white;
+    font-weight:600;
+    font-size:15px;
+    padding:1px 10px;
+}
+.signup .nav-link:hover{
+    color:white;
+}
+.heading-1{
+    color:#ff471a;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.search{
+    text-align: center;
+}
+.search-box{
+  width: 80%;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('../Images/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.search-box:focus{
+    border: 2px solid #ff471a;
+    width: 100%;
+}
+.q-row{
+    margin-top: 50px;
+}
+.faq-heading{
+  border-bottom: #777;
+  padding: 20px 60px;
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+.hr-line{
+width: 60%;
+margin: auto;
+color: black;
+background-color: black;
+height: 1px;
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+  /* background-color: #eee; */
+  color: #444;
+  cursor: pointer;
+  padding: 30px 20px;
+  width: 60%;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  margin: auto;
+
+}
+.faq-body{
+  margin: auto;
+  text-align: justify;
+ width: 40%; 
+ padding: auto;
+ 
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+  background-color: #F9F9F9;
+}
+
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+}
+
+.faq-page:after {
+  content: '\02795';
+  /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+ /* footer  */
+ #footer{
+    background-color: #353537;
+    margin-top: 200px;
+  }
+  .links{
+    padding-top:0px;
+    font-size:20px;
+    font-family: "Josefin sans";
+    padding-top:20px;
+    font-weight: 600;
+    color:#b1b1b4;
+  }
+  .links-ul{
+    list-style: none;
+    margin-top:20px;
+  }
+  .links-ul li{
+    color:white;
+  }
+  .links-li a{
+    margin-top:20px;
+    font-size:20px;
+  }
+  .links-li a:hover{
+    color:#ff471a;
+    text-decoration:none;
+  }
+ .footer-form{
+   margin-top:20px;
+ }
+ .request-btn{
+   background-color:#ff471a;
+   color:white;
+   padding:7px 20px;
+   margin-top:10px;
+ }
+ .footer-hr{
+   border-top:10px solid #b1b1b4;
+   padding-top:10px;
+   padding-bottom:10px;
+ }
+ .copyright{
+   color:white;
+   font-size:20px;
+ }
+ .social-links{
+   color:white;
+   font-size:28px;
+   margin-left:10px;
+ }
+ .social-links:hover{
+   color:#ff471a;
+ }
+
+ .fa-arrow-up{
+  background-color:#ff471a;
+  color:white;
+  font-weight:500;
+  padding:10px;
+  font-size:28px;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+
+}
+/* contact */
+.book-container{
+    background-color:white;
+    border-radius: 10px;
+    height:100%;
+    margin-top:50px;
+}
+.book-header{
+    color:#ff471a;
+    text-align:center;
+    font-weight:600;
+    padding-top:30px;
+}
+.book-p{
+    text-align:center;
+    padding-top:0px;
+}
+.book-form{
+    padding-left:50px;
+    padding-right:50px;
+}
+.book-first-row{
+    padding-top:30px;
+}
+.book-second-row{
+    padding-top:20px;
+}
+.txtarea{
+    height:150px;
+    padding-bottom:40px;
+}
+.book-third-row{
+    padding-bottom:20px;
+    padding-top:20px;
+}
+.submit-btn{
+    text-align:right;
+    padding-bottom:30px;
+}
+.book-btn{
+    background-color:#ff471a;
+    color:white;
+}
+
+
+
+
+@media (max-width: 420px) {
+}
+@media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 600px) {
+    /* navbar  */
+    .logo{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+.navbar{
+    padding-top:20px;
+  }
+  
+  .signup{
+    background-color:#ff471a;
+    color:white;
+    font-weight:600;
+    font-size:15px;
+    padding:1px 10px;
+    width:30%;
+    text-align: center;
+  }
+  /* banner content  */
+.banner-header{
+    font-size:28px;
+    font-weight:600;
+    margin-top:30px;
+    margin-left:0px;
+    font-family:"Josefin Sans";
+    color:white;
+  }
+  .banner-p{
+    font-size:18px;
+    margin-left:0px;
+    margin-top:20px;
+    color:white;
+  }
+  .template{
+    background-color:#ff471a;
+    color:white;
+    font-size:20px;
+    margin-bottom:80px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:0px;
+    margin-left:0px;
+    margin-top:30px;
+  }
+  .template:hover{
+    background-color: #e62e00;
+    color:white;
+  }
+  .banner-image{
+    display:none;
+  }
+  .profile-row{
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: auto;
+      margin-bottom: auto;
+  }
+  .heading-1{
+      margin-bottom: 50px;
+      margin-top: 50px;
+  }
+  .flip-box{
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .row1{
+      margin-bottom: 50px;
+      margin-top: 50px;
+  }
+  .content-q{
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  /* footer  */
+
+.copyright{
+    color:white;
+    font-size:20px;
+    text-align:center;
+   }
+   
+   .welcome{
+     font-size:28px;
+   }
+   .row-1{
+     margin-top:40px;
+   }
+   .title{
+     color:#ff471a;
+   }
+}

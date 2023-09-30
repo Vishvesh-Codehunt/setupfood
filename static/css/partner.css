@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family:"Josefin Sans";
+}
+body{
+    background-color: #f2f2f3;
+}
+.logo{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+#banner{
+    background-color: #353537;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* navbar  */
+.navbar{
+    padding-top:30px;
+}
+.navbar-brand{
+    color:white;
+}
+.left-banner{
+    margin-top:50px;
+}
+.nav-link{
+    color:white;
+}
+.nav-item{
+    margin-right:20px;
+}
+.login{
+    color:white;
+    font-weight:600;
+    font-size:15px;
+}
+.login:hover{
+    color:#ff471a;
+}
+.signup{
+    background-color:#ff471a;
+    color:white;
+    font-weight:600;
+    font-size:15px;
+    padding:1px 10px;
+}
+.signup .nav-link:hover{
+    color:white;
+}
+#about-section1-1{
+    padding: 30px;
+}
+.heading-1{
+    text-align: left;
+    font-weight: 700;
+    margin-top: 50px;
+    /* font-size: 40px; */
+}
+.head-p{
+  font-size: medium;
+  margin-top: 5px;
+}
+.explore-btn{
+    background-color: #ff471a;
+    border: 1px solid #ff471a;
+    color: white;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+.explore-btn:hover{
+    background-color: #f74113;
+    letter-spacing: 0.1ch;
+    color: white;
+}
+#service{
+    padding: 30px;
+}
+.customer-p{
+  font-size: 12px;
+}
+.content-row{
+    margin-top: 50px;
+}
+.head-1{
+    text-align: left;
+    font-weight: 700;
+}
+.head-2{
+  text-align: center;
+  font-weight: 700;
+}
+.p-form{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-div{
+    margin: 10px;
+}
+.submit-btn{
+    text-align: right;
+}
+.send-btn{
+    border: 1px solid #ff471a;
+    background-color: #ff471a;
+    color: white;
+}
+.send-btn:hover{
+    border: 1px solid #e62e00;
+    color: white;
+    letter-spacing: 0.1em;
+}
+ /* footer  */
+ #footer{
+    background-color: #353537;
+    margin-top: 200px;
+  }
+  .links{
+    padding-top:0px;
+    font-size:20px;
+    font-family: "Josefin sans";
+    padding-top:20px;
+    font-weight: 600;
+    color:#b1b1b4;
+  }
+  .links-ul{
+    list-style: none;
+    margin-top:20px;
+  }
+  .links-ul li{
+    color:white;
+  }
+  .links-li a{
+    margin-top:20px;
+    font-size:20px;
+  }
+  .links-li a:hover{
+    color:#ff471a;
+    text-decoration:none;
+  }
+  .service-h{
+    text-align: center;
+    font-weight: 700;
+}
+.service-p{
+    text-align: center;
+}
+.customer-p{
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 300;
+}
+#partnership{
+    margin-top: 50px;
+}
+ .footer-form{
+   margin-top:20px;
+ }
+ .request-btn{
+   background-color:#ff471a;
+   color:white;
+   padding:7px 20px;
+   margin-top:10px;
+ }
+ .footer-hr{
+   border-top:10px solid #b1b1b4;
+   padding-top:10px;
+   padding-bottom:10px;
+ }
+ .copyright{
+   color:white;
+   font-size:20px;
+ }
+ .social-links{
+   color:white;
+   font-size:28px;
+   margin-left:10px;
+ }
+ .social-links:hover{
+   color:#ff471a;
+ }
+
+ .fa-arrow-up{
+  background-color:#ff471a;
+  color:white;
+  font-weight:500;
+  padding:10px;
+  font-size:28px;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+
+}
+
+
+
+@media (max-width: 420px) {
+}
+@media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 600px) {
+    /* navbar  */
+    .logo{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+.navbar{
+    padding-top:20px;
+  }
+  
+  .signup{
+    background-color:#ff471a;
+    color:white;
+    font-weight:600;
+    font-size:15px;
+    padding:1px 10px;
+    width:30%;
+    text-align: center;
+  }
+  /* banner content  */
+.banner-header{
+    font-size:28px;
+    font-weight:600;
+    margin-top:30px;
+    margin-left:0px;
+    font-family:"Josefin Sans";
+    color:white;
+  }
+  .banner-p{
+    font-size:18px;
+    margin-left:0px;
+    margin-top:20px;
+    color:white;
+  }
+  .template{
+    background-color:#ff471a;
+    color:white;
+    font-size:20px;
+    margin-bottom:80px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius:0px;
+    margin-left:0px;
+    margin-top:30px;
+  }
+  .template:hover{
+    background-color: #e62e00;
+    color:white;
+  }
+  .banner-image{
+    display:none;
+  }
+ 
+  .heading-1{
+      margin-top: 20px;
+  }
+  .customer-p{
+      font-size: 18px;
+  }
+  #service{
+      padding: 0px;
+  }
+  #about-section1-1{
+      padding: 0px;
+  }
+  .service-h{
+      margin-top: 50px;
+  }
+  .customer-p{
+      margin-top: 0%;
+  }
+  .content-row{
+      margin-top: 100px;
+  }
+  #partnership{
+      margin-top: 100px;
+  }
+  .p-form{
+    width: auto;
+  }
+  /* footer  */
+
+.copyright{
+    color:white;
+    font-size:20px;
+    text-align:center;
+   }
+   
+   .welcome{
+     font-size:28px;
+   }
+   .row-1{
+     margin-top:40px;
+   }
+   .title{
+     color:#ff471a;
+   }
+}

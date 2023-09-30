@@ -1,0 +1,360 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family:"Poppins",sans-serif;
+}
+body{
+    background-color: #f2f2f3;
+}
+.logo{
+  height: 70px;
+  width: 100%;
+  border-radius: 50%;
+}
+#banner{
+    background-color: #353537;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* navbar  */
+.navbar{
+    padding-top:0px;
+}
+.navbar-brand{
+    color:white;
+}
+.left-banner{
+    margin-top:50px;
+}
+.nav-link{
+    color:white;
+}
+.nav-item{
+    margin-right:20px;
+}
+.login{
+    color:white;
+    font-weight:600;
+    font-size:15px;
+}
+.login:hover{
+    color:#ff471a;
+}
+.signup{
+    background-color:#ff471a;
+    color:white;
+    font-weight:600;
+    font-size:15px;
+    padding:1px 10px;
+}
+.signup .nav-link:hover{
+    color:white;
+}
+#footer{
+    background-color: #353537;
+  }
+  .links{
+    padding-top:0px;
+    font-size:20px;
+    font-family:"Poppins",sans-serif;
+    padding-top:20px;
+    font-weight: 600;
+    color:white;
+  }
+  .links-ul{
+    list-style: none;
+    margin-top:20px;
+  }
+  .links-ul li{
+    color:white;
+  }
+  .links-li a{
+    margin-top:20px;
+    font-size:16px;
+    color:white;
+  }
+  .links-li a:hover{
+    color:#ff471a;
+    text-decoration:none;
+  }
+  .contact-li{
+    margin-top:20px;
+    font-size:15px;
+  }
+ .footer-form{
+   margin-top:20px;
+ }
+ .request-btn{
+   background-color:#ff471a;
+   color:white;
+   padding:7px 20px;
+   margin-top:10px;
+ }
+ .footer-hr{
+   border-top:10px solid #b1b1b4;
+   padding-top:10px;
+   padding-bottom:10px;
+ }
+ .copyright{
+   color:white;
+   font-size:20px;
+ }
+ .social-links{
+   color:white;
+   font-size:28px;
+   margin-left:10px;
+ }
+ .social-links:hover{
+   color:#ff471a;
+ }
+
+ .fa-arrow-up{
+  background-color:#ff471a;
+  color:white;
+  font-weight:500;
+  padding:10px;
+  font-size:28px;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+
+}
+
+/* terms and conditions */
+.terms-h{
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#terms{
+    margin-top: 30px;
+    padding: 20px;
+}
+.terms-ul{
+    margin-top: 20px;
+    list-style-image: url(../Images/right-hand.png);
+    padding: 20px;
+    
+}
+.terms-li{
+    font-weight: 400;
+    font-family: 'Poppins';
+    font-size: 16px;
+    margin-top: 10px;
+
+}
+
+/* privacy policy */
+
+.privacy-container{
+    background-color:#ffcc99;
+    padding: 30px;
+    border: 1px solid #ffcc99;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-h1{
+  font-size:32px;
+  font-weight:600;
+}
+.form-row{
+  margin-top:50px;
+}
+
+/* contact */
+.contact-container{
+    padding: 50px;
+    background-image: url(../Images/contact.svg);
+    width: 50%;
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contact-form{
+    margin-top: 15px;
+    padding: 20px;
+}
+.send-btn{
+    background-color: #ff471a;
+    padding: 12px 40px;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #ff471a;
+    border-radius: 0px;
+}
+.btn-div{
+    padding: 20px;
+    text-align: right;
+}
+
+.contact-img{
+  height:100%;
+  width:100%;
+}
+
+.color{
+  color:orangered
+}
+
+.signup{
+  background-color:white;
+  border-bottom:3px solid orangered;
+  transition:0.7s;
+  cursor:pointer;
+  padding:5px 40px;
+  font-weight:600;
+}
+.signup .nav-link{
+  color:orangered;
+}
+
+label{
+  font-size: 18px;
+  margin-top:20px;
+}
+
+.form{
+  margin-top:20px;
+  
+}
+
+.form-right{
+  position: relative;
+  left:40px;
+}
+.mytxtarea{
+  height:100px;
+}
+
+.signup:hover{
+  background-color:orangered;
+  transition:0.7s;
+}
+.signup:hover .nav-link{
+  color:white;
+}
+
+.want-btn{
+  background-color:orangered;
+  color:white;
+  padding:15px 40px;
+  font-size:16px;
+  border-radius:0px;
+  margin-top:20px;
+}
+.want-btn:hover{
+  background-color:white;
+  border:3px solid orangered;
+  transition:0.7s;
+  color:orangered;
+}
+@media only screen and (max-width: 600px) {
+
+     /* navbar  */
+     .logo{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+.navbar{
+padding-top:20px;
+}
+
+.signup{
+background-color:#ff471a;
+color:white;
+font-weight:600;
+font-size:15px;
+padding:1px 10px;
+width:30%;
+text-align: center;
+}
+/* terms */
+
+.terms-li{
+    font-size: 18px;
+}
+.terms-h{
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+/* privacy policy */
+
+.privacy-container{
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* contact */
+.contact-container{
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.contact-form{
+    margin-top: 10px;
+    padding: 10px;
+}
+.send-btn{
+    padding: 10px 30px;
+}
+.btn-div{
+    padding: 10px;
+    text-align: center;
+}
+
+.form-right{
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.mytxtarea{
+  height:100%;
+}
+.want-btn{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
+}
+.form-h1{
+  font-size:40px;
+  text-align: center;
+}
+
+
+.signup .nav-link{
+  color:white;
+}
+
+
+
+/* footer  */
+.demo-input{
+    margin-left: 0px;
+  }
+  .copyright{
+   color:white;
+   font-size:20px;
+   text-align:center;
+  }
+
+  #footer{
+    padding-bottom:30px;
+  }
+  
+}

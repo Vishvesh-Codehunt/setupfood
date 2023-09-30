@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400,500,600&display=swap');
+*{
+    font-family:"Poppins",sans-serif;
+    margin:0;
+    padding:0;
+}
+.bill-box{
+    background-color:white;
+    border:1px solid black;
+    height:100%;
+    width:100%;
+    padding-bottom:15px;
+    margin-top:10px;
+}
+.hotel-name{
+    font-size:24px;
+    font-weight:600;
+    color:black;
+    text-align: center;
+    padding-top:15px;
+}
+.order-p{
+    color:black;
+    text-align: center;
+    font-weight:400;
+    font-size:18px;
+}
+.order-details-1{
+    font-size:14px;
+}
+.line{
+    border:1px solid black;
+}
+.order-items{
+    text-align: center;
+    font-size:20px;
+}
+.item-row{
+    margin-top:10px;
+}
+.item-name{
+    font-size:12px;
+}
+.item-qty{
+    font-size:12px;
+    text-align: center;
+}
+.item-rate{
+    font-size:12px;
+    text-align: center;
+}
+.item-total-rate{
+    font-size:12px;
+    text-align: center;
+}
+.total-bill{
+    font-size:16px;
+}
+.amount{
+  margin-left:30px;
+}
+.grand-bill{
+    font-size:18px;
+    font-weight: 600;
+}
+.note{
+    text-align: center;
+    margin-top:10px;
+}
+.note-col{
+    margin-top:40px;
+}
+
+@media only screen and (max-width: 600px) {
+    .item-name{
+        font-size:12x;
+    }
+    .item-qty{
+        font-size:12px;
+    }
+    .item-rate{
+        font-size:12px;
+        margin-right: 0%;
+    }
+    .item-total-rate{
+        font-size:12px;
+        margin-left: 0%;
+
+    }
+    .grand-bill{
+        text-align: right;
+    }
+    
+    
+}

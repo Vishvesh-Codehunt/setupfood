@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Karla', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Karla', sans-serif;
+    background-color: #edeff8;
+}
+
+/* navbar  */
+.second-links{
+    margin-left:30px;
+}
+nav{
+    position:relative;
+    top:20px;
+}
+.nav-link{
+    font-weight:500;
+    font-size:18px;
+    margin-right:10px;
+    color:white;
+    font-weight:600;
+}
+.navbar-brand{
+    font-weight:600;
+    color:white;
+    font-size:24px;
+}
+.navbar-brand:hover{
+    color:#30c213;
+}
+.nav-link:hover{
+    color:#30c213;
+    border-bottom:1px solid #30c213;
+}
+.ul-1{
+    display: none;
+}
+.logo-img{
+    height:80px;
+    width:100%;
+}
+    
+
+/* banner */
+#banner{
+    background-image: url("../Images/template-banner.jpg"); /* The image used */
+    /* Used if the image is unavailable */
+    height: 100%;
+    width:100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.banner-div{
+    background-color: rgba(0, 0, 0, 0.7);
+    height:500px;
+}
+.banner-header{
+    color:white;
+    font-size:60px;
+    font-weight:590px;
+    text-align:center;
+    font-family:"Karla",sans-serif;
+    margin-top:100px;
+}
+.banner-p{
+    text-align: center;
+    font-family: "Karla",sans-serif;
+    margin-top:10px;
+    font-size:24px;
+    color:white;
+}
+.register-btn{
+    text-align:center;
+    margin-top:30px;
+}
+.book-table{
+    background-color:#4a9ce8;
+    color:white;
+    padding:10px 40px;
+    border-radius:40px;
+}
+.book-table:hover{
+    background-color:#4a9ce8;
+    color:white;
+}
+
+/* about */
+#about{
+    margin-top:100px;
+    margin-bottom:40px;
+}
+.rest-name{
+    font-size:40px;
+    font-family: "Karla",sans-serif;
+    font-weight:600;
+    text-align:center;
+}
+.rest-p{
+    font-size:18px;
+    text-align:center;
+}
+.about-row{
+    margin-top:60px;
+}
+.about-p{
+    font-size:18px;
+    line-height:1.7;
+}
+.gallary-img{
+    height:200px;
+    width:100%;
+    border-radius:10px;
+}
+.explore{
+    background-color:#4a9ce8;
+    color:white;
+    padding:10px 40px;
+    border-radius:40px;
+    margin-top:40px;
+    text-transform: uppercase;
+}
+.explore:hover{
+    background-color:#4a9ce8;
+    color:white;
+}
+
+/* timings */
+.custom-shape-divider-top-1630995110 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1630995110 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1630995110 .shape-fill {
+    fill: #FFFFFF;
+}
+
+#timing{
+    background-color:#5971c0;
+}
+
+.custom-shape-divider-bottom-1630995348 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1630995348 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1630995348 .shape-fill {
+    fill: #FFFFFF;
+}
+.timing-img{
+    height:100px;
+    width:100px;
+}
+.timing-row{
+    margin-top:60px;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+.title-timing{
+    font-size:32px;
+    font-family:"Karla", sans-serif;
+    color:white;
+    margin-top:20px;
+}
+.time{
+    color:white;
+    margin-top:10px;
+    font-size:18px;
+    font-family:"Karla", sans-serif;
+}
+
+/* features  */
+.title-feature{
+    color:#4a9ce8;
+    font-family: "Karla", sans-serif;
+    font-size:24px;
+    font-weight:600;
+    margin-top:30px;
+}
+.features-p{
+    font-size:18px;
+    margin-top:20px;
+}
+.features-h1{
+    text-align:center;
+    font-size:40px;
+    font-weight:600;
+    font-family:"Karla", sans-serif;
+    position: relative;
+    bottom:50px;
+}
+.features-h1-p{
+    font-size:20px;
+    position: relative;
+    bottom:50px;
+    text-align:center;
+    color:gray;
+}
+/* contact */
+.book-container{
+    background-color:white;
+    border-radius: 10px;
+    height:100%;
+    margin-top:50px;
+}
+.book-header{
+    color:#4a9ce8;
+    text-align:center;
+    font-weight:600;
+    padding-top:30px;
+}
+.book-p{
+    text-align:center;
+    padding-top:0px;
+}
+.book-form{
+    padding-left:50px;
+    padding-right:50px;
+}
+.book-first-row{
+    padding-top:30px;
+}
+.book-second-row{
+    padding-top:20px;
+}
+.txtarea{
+    height:150px;
+    padding-bottom:40px;
+}
+.book-third-row{
+    padding-bottom:20px;
+    padding-top:20px;
+}
+.submit-btn{
+    text-align:right;
+    padding-bottom:30px;
+}
+.book-btn{
+    background-color:#4a9ce8;
+    color:white;
+}
+/* map  */
+iframe{
+    height:300px;
+    width:100%;
+    margin-top:80px;
+    border:0px;
+}
+
+/* footer */
+#footer{
+    background-color:#4a9ce8;
+}
+.footer-header{
+    color:white;
+    font-weight:700;
+    font-size:19px;
+    padding-top:30px;
+    padding-bottom:20px;
+}
+.footer-p{
+    color:white;
+    font-size:16px;
+}
+.social-media{
+    padding-bottom:40px;
+    padding-top:20px;
+}
+.social-link{
+    margin-right:10px;
+    font-size:20px;
+    color:white;
+}
+.hours-p{
+    font-size:20px;
+    color:white;
+}
+.hours{
+    color:white;
+}
+.footer-ul{
+    list-style-type: none;
+}
+.footer-ul li a{
+    color:white;
+    font-size:18px;
+}
+.footer-form{
+    border-radius:0px;
+}
+.sub-btn{
+    background-color:#4a9ce8;
+    border:1px solid white;
+    border-radius:0px;
+    padding:5px 40px;
+    color:white;
+    text-transform: uppercase;
+    margin-top:20px;
+}
+.footer-hr{
+    border:1px solid white;
+    width:100%;
+}
+.copyright-p{
+    color:white;
+    text-align:center;
+    font-size:20px;
+}
+
+@media only  screen and(max-height : 700px) {
+    .ul-2{
+        display: none;
+    }
+    .ul-1{
+        display: inline-block;
+    }
+}
+@media only screen and (max-width: 600px){
+    nav{
+        position:relative;
+        top:0px;
+    }
+    .second-links{
+        margin-left:0px;
+    }
+    .ul-2{
+        display: none;
+    }
+    .ul-1{
+        display: inline-block;
+    }
+    .nav-link:hover{
+        color:#30c213;
+        border-bottom:1px solid #30c213;
+        width:100px;
+    }
+    .banner-div{
+        background-color: rgba(0, 0, 0, 0.7);
+        height:100%;
+    }
+    .banner-header{
+        font-size:22px;
+        margin-top:50px;
+    }
+    .banner-p{
+        font-size:16px;
+        color:white;
+    }
+    .register-btn{
+        text-align:center;
+        margin-top:30px;
+    }
+    .book-table{
+        background-color:#4a9ce8;
+        color:white;
+        padding:10px 40px;
+        border-radius:0px;
+        margin-bottom:40px;
+    }
+    .book-form{
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .book-third-row{
+        padding-top:0px;
+    }
+    .book-second-row{
+        padding-top:0px;
+    }
+    .submit-btn{
+        text-align:center;
+        padding-bottom:30px;
+    }
+    .book-btn{
+        background-color:#4a9ce8;
+        color:white;
+    }
+    .book-container{
+        margin-bottom:50px;
+    }
+    /* about  */
+    #about{
+        margin-top:50px;
+        margin-bottom:40px;
+    }
+    .rest-name{
+        font-size:28px;
+    }
+    .rest-p{
+        font-size:18px;
+        text-align:center;
+    }
+    .about-row{
+        margin-top:30px;
+    }
+    .about-p{
+        font-size:16px;
+        line-height:1.7;
+    }
+    .gallary-img{
+        height:100%;
+        width:100%;
+        border-radius:10px;
+        margin-top:10px;
+    }
+    .more{
+        text-align:center;
+    }
+    .explore{
+        background-color:#4a9ce8;
+        color:white;
+        padding:10px 40px;
+        border-radius:40px;
+        margin-top:20px;
+        margin-bottom:40px;
+        text-transform: uppercase;
+    }
+    .explore:hover{
+        background-color:#4a9ce8;
+        color:white;
+    }
+
+    .timing-img{
+        height:100px;
+        width:100px;
+        margin-top:40px;
+    }
+    .timing-row{
+        margin-top:60px;
+        padding-top:0px;
+        padding-bottom:20px;
+    }
+    /* features  */
+.title-feature{
+    color:#4a9ce8;
+    font-family: "Karla", sans-serif;
+    font-size:24px;
+    font-weight:600;
+    margin-top:30px;
+}
+.features-p{
+    font-size:18px;
+    margin-top:20px;
+}
+.features-h1{
+    text-align:center;
+    font-size:30px;
+    font-weight:600;
+    font-family:"Karla", sans-serif;
+    position: relative;
+    bottom:30px;
+    margin-top:30px;
+}
+.features-h1-p{
+    font-size:16px;
+    position: relative;
+    bottom:20px;
+    text-align:center;
+    color:gray;
+}
+.book-container{
+    background-color:white;
+    border-radius: 20px;
+    height:100%;
+    margin-top:50px;
+}
+.copyright-p{
+    color:white;
+    text-align:center;
+    font-size:19px;
+    position: relative;
+    left:10px;
+}
+.footer-header{
+    color:white;
+    font-weight:700;
+    font-size:19px;
+    padding-top:0px;
+    padding-bottom:10px;
+}
+.about-header{
+    padding-top:30px;
+}
+}

@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Karla', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Karla', sans-serif;
+    background-color: #edeff8;
+}
+
+/* navbar  */
+.second-links{
+    margin-left:30px;
+}
+nav{
+    position:relative;
+    top:10px;
+}
+.nav-link{
+    font-weight:500;
+    font-size:18px;
+    margin-right:10px;
+    color:white;
+    font-weight:600;
+}
+.navbar-brand{
+    font-weight:600;
+    color:white;
+    font-size:24px;
+}
+.navbar-brand:hover{
+    color:#30c213;
+}
+.nav-link:hover{
+    color:#30c213;
+    border-bottom:1px solid #30c213;
+}
+/* banner */
+#banner{
+    background-image: url("../Images/menu-header.jpg"); /* The image used */
+    /* Used if the image is unavailable */
+    height: 100%;
+    width:100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.banner-div{
+    background-color: rgba(0, 0, 0, 0.7);
+    height:400px;
+}
+.banner-header{
+    color:white;
+    font-size:60px;
+    font-weight:600;
+    text-align:center;
+    font-family:"Karla",sans-serif;
+    margin-top:100px;
+}
+.cart-item{
+    text-align: right;
+}
+.cart-collapse{
+    display: none;
+}
+.input-icons {
+    margin-bottom: 10px;
+    float: right;
+}
+  
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.input-field {
+    padding: 10px;
+    text-align: center;
+}  
+#menu{
+    margin: 50px;
+    padding: 10;
+}
+.sidenav {
+    height: 300px;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 120;
+    left: 120;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.menu-list{
+    position:relative;
+    margin: 200;
+    /* padding-top: 10px; */
+    /* padding-bottom: 10; */
+    /* padding-left: 10rem; */
+    /* padding-right: 10rem; */
+    padding: 20;
+}
+  
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color:white;
+    display: block;
+    transition: 0.3s;
+}
+.submit-btn{
+    color:#4a9ce8 ;
+}
+  
+.sidenav a:hover {
+    color: #30c213;
+}
+/* .second-links{
+    text-align: right;
+}   */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.image-div{
+    background-image: url("../Images/breakfast-header.jpg"); /* The image used */
+    /* Used if the image is unavailable */
+    height: 100%;
+    width:100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+}  
+#header-span{
+    color:rgb(111, 128, 89);
+    margin-top: 500px;
+}
+.panel{
+    border: 2px solid black;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.panel-heading{
+    font-size: large;
+    width: 100%;
+    height: 50%;
+    background-color: #4a9ce8;
+    border-radius: 4px;
+    border: 1px solid #4a9ce8;
+    padding: 1rem;
+    color: #edeff8;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* margin: 10px; */
+}
+/* .add-more{
+    text-align: right;
+    font-size: larger;
+    font-weight: 600;
+    float: right;
+    margin: 100;
+} */
+.list-grp{
+    padding: 50;
+    margin: 50;
+}
+.list-group{
+    background-color: aliceblue;
+    border: 1px solid aliceblue;
+    border-radius: 4px;
+    margin: 20;
+    padding: 20;
+}
+.menu-info{
+    margin: 10;
+}
+.course-img{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: 50px;
+    margin-right: 50px;
+    float: left;
+    /* height: min-content; */
+}
+.info-left{
+    text-align: justify;
+}
+.title{
+    font-weight: 300;
+    margin-left: 20;
+}
+.text{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.menu-price{
+    text-align: right;
+}
+.btn{
+    border: 2px solid blue;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.btn:hover{
+    border : 2px solid blue;
+}
+.image-div-lunch{
+    background-image: url("../Images/lunch-header.jpg"); /* The image used */
+    /* Used if the image is unavailable */
+    height: 100%;
+    width:100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+}
+.image-div-dinner{
+    background-image: url("../Images/dinner-header.jpg"); /* The image used */
+    /* Used if the image is unavailable */
+    /* height: 100%; */
+    width:100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+}
+.image-div-special{
+    background-image: url("../Images/special-header.jpg"); /* The image used */
+    /* Used if the image is unavailable */
+    /* height: 100%; */
+    width:100%; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+}
+/* footer */
+#footer{
+    background-color:#4a9ce8;
+}
+.footer-header{
+    color:white;
+    font-weight:700;
+    font-size:19px;
+    padding-top:30px;
+    padding-bottom:20px;
+}
+.footer-p{
+    color:white;
+    font-size:16px;
+}
+.social-media{
+    padding-bottom:40px;
+    padding-top:20px;
+}
+.social-link{
+    margin-right:10px;
+    font-size:20px;
+    color:white;
+}
+.hours-p{
+    font-size:20px;
+    color:white;
+}
+.hours{
+    color:white;
+}
+.footer-ul{
+    list-style-type: none;
+}
+.footer-ul li a{
+    color:white;
+    font-size:18px;
+}
+.footer-form{
+    border-radius:0px;
+}
+.sub-btn{
+    background-color:#4a9ce8;
+    border:1px solid white;
+    border-radius:0px;
+    padding:5px 40px;
+    color:white;
+    text-transform: uppercase;
+    margin-top:20px;
+}
+.footer-hr{
+    border:1px solid white;
+    width:100%;
+}
+.copyright-p{
+    color:white;
+    text-align:center;
+    font-size:20px;
+}
+
+@media screen and (max-height: 700px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .ul-2{
+        display: none;
+    }
+     .cart-collapse{
+        display: inline-block;
+        /* position: relative; */
+        /* left: 50px; */
+    } 
+    #menu{
+        margin: 25px;
+        padding: 5;
+    }
+    .menu-list{
+            position:relative;
+            margin: 200;
+            padding: 20;
+    }
+    .image-div {height: 200px;}
+    .image-div-lunch {height: 200px;}
+    .image-div-dinner{height: 200px;} 
+    .image-div-special{
+        height: 200px;
+    }
+    .input-icons{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        float: none;
+    }
+    .form-inline .form-control{
+        display: inline-block;
+        width: 100%;
+    }
+        
+}
+@media only screen and (max-width: 600px){
+    nav{
+        position:relative;
+        top:0px;
+    }
+    .second-links{
+        margin-left:0px;
+    }
+    .nav-link:hover{
+        color:#30c213;
+        border-bottom:1px solid #30c213;
+        width:100px;
+    }
+    .ul-2{
+        display: none;
+    }
+     .cart-collapse{
+        display: inline-block;
+        /* position: relative; */
+        /* left: 10rem; */
+    } 
+    .banner-div{
+        background-color: rgba(0, 0, 0, 0.7);
+        height:100%;
+    }
+    .banner-header{
+        font-size:30px;
+        margin-top:50px;
+    }
+    .course-img{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        float: left;
+    }
+    .menu-list{
+        position:relative;
+        margin: 200;
+        padding: 20;
+    }
+    .list-group{
+        background-color: aliceblue;
+        border: 1px solid aliceblue;
+        border-radius: 4px;
+        margin: 10;
+        padding: 10;
+    }
+    .panel{
+        border: 2px solid black;
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-size: 30px;
+    }
+    .panel-heading{
+        font-size: large;
+        width: 100%;
+        height: 50%;
+        background-color: #4a9ce8;
+        border-radius: 4px;
+        border: 1px solid #4a9ce8;
+        padding: 0.2rem;
+        color: #edeff8;
+    }
+    .image-div {height: 300px;}
+    .image-div-lunch {height: 300px;}
+    .image-div-dinner{height: 300px;} 
+    .image-div-special{
+        height: 300px;
+    }
+    .input-icons{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        float: none;
+    }
+   
+.copyright-p{
+    color:white;
+    text-align:center;
+    font-size:19px;
+    position: relative;
+    left:10px;
+}
+.footer-header{
+    color:white;
+    font-weight:700;
+    font-size:19px;
+    padding-top:0px;
+    padding-bottom:10px;
+}
+.about-header{
+    padding-top:30px;
+}
+.form-inline .form-control{
+    display: inline-block;
+    width: 100%;
+    /* height: 100%; */
+}
+}
+ @media only screen and (max-width: 990px){
+    .ul-2{
+        display: none;
+    }
+    .cart-collapse{
+        display: inline-block;
+        /* position: relative; */
+        /* margin-right: 10px; */
+        /* margin-left: 300px; */
+    }
+    .form-inline .form-control{
+        display: inline-block;
+        width: 100%;
+    }
+} 
