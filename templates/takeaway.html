@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setupfood</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="{{url_for('static', filename='css/service-details.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+    <section id="service-info">
+        <div class="container-fluid">
+            <div class="row">
+
+                 <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+                 </div>
+                <div class="col-md-6 col-12 col-sm-12 col-lg-6">
+
+
+                        <div class="take-away-column">
+
+                            
+                            <h1 class="form-h1">
+                                Take Away
+                            </h1>
+                            <form action="/{{name}}/confirm-order" method="post" class="dine-in-form">
+                            
+                                    <div class="row">
+                                      <div class="col">
+                                       <label class="mylabel">
+                                           Your Name
+                                       </label>
+                                        <input type="text" name="name" class="form-control form-input" placeholder="E.g. Vishvesh Patel" required>
+                                      </div>
+                                      <div class="col">
+                                       <label class="mylabel">
+                                           Mobile Number
+                                       </label>
+                                        <input type="text" name="mobile" class="form-control form-input" placeholder="E.g. 9016754456" required>
+                                      </div>
+                                    </div>
+
+                                    <label class="mylabel">
+                                       Schedule Time
+                                    </label>
+                                    <div class="row">
+                                        <div class="col-md-4 col-12 col-sm-12 col-lg-4">
+                                            <select class="form-control" name="st_time" id="st_time">
+                                                <option value=""> Hour</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                             </select>
+                                        </div>
+
+                                             <div class="col-md-4 col-12 col-sm-12 col-lg-4">
+                                                <select name="time_mm" id="time_mm" class="form-control">
+                                                    <option value=""> Minute</option>
+                                                    <option value="00">00</option>
+                                                    <option value="15">15</option>
+                                                    <option value="30">30</option>
+                                                    <option value="45">45</option>
+                                              </select>
+                                            </div>
+
+                                            <div class="col-md-4 col-12 col-sm-12 col-lg-4">
+                                                <select class="form-control" name="st_slot" id="st_slot">
+                                                    <option value="AM">AM</option>
+                                                    <option value="PM">PM</option>
+                                                </select>
+                                            </div>
+                                    </div>
+
+                                    <input type="submit" class="btn btn-lg submit-btn" value="Place Order">
+                             
+                            </form>
+                        </div>
+
+
+                        <!-- <div class="home-delivery-column">
+
+                            
+                            <h1 class="form-h1">
+                                Home Delivery
+                            </h1>
+                            <form action="" method="post" class="dine-in-form">
+                            
+                                    <div class="row">
+                                      <div class="col">
+                                       <label class="mylabel">
+                                           Your Name
+                                       </label>
+                                        <input type="text" name="name" class="form-control form-input" placeholder="E.g. Vishvesh Patel" required>
+                                      </div>
+                                      <div class="col">
+                                       <label class="mylabel">
+                                           Mobile Number
+                                       </label>
+                                        <input type="text" name="number" class="form-control form-input" placeholder="E.g. 9016754456" required>
+                                      </div>
+                                    </div>
+
+                                    <label class="mylabel">
+                                       Address
+                                    </label>
+                                    <textarea type="text" name="address" class="form-control form-input mytxtarea" style="padding:10px;height:100px;" placeholder="Your Address" required></textarea>
+
+                                    <input type="submit" class="btn btn-lg submit-btn" value="Place Order">
+                             
+                            </form>
+                        </div> -->
+
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+   <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+   <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+   <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

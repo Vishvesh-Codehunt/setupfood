@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <title>Thanks for Order!</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&family=Fredoka+One&family=Poppins:wght@400;500;600&display=swap');
+      *{
+          margin:0px;
+          padding:0px;
+      }
+        #banner{
+            background-image: url('../static/Images/background.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height:100%;
+            width:100%;
+        }
+      
+        .order-content{
+            text-align: center;
+        }
+        .banner-h1{
+            font-size:80px;
+            font-weight:600;
+            font-family:"Poppins",sans-serif;
+            color:black;
+        }
+        .banner-h2{
+            font-family:"Poppins",sans-serif;
+            font-weight:600;
+            font-size:30px;
+            margin-top:10px;
+           color:black;
+        }
+        .cookies-gif{
+            height:300px;
+            width:400px;
+        }
+        .banner-row{
+            padding-top:100px;
+        }
+        .social-links{
+            margin-top:50px;
+        }
+        .social-link{
+            color:orange;
+            font-size:30px;
+            background-color:black;
+            padding-left:8px;
+            margin-right:10px;
+            text-align: center;
+            padding:8px;
+        }
+        .social-link:hover{
+            background-color: orange;
+            transition: 0.7s;
+        }
+        .friends-span{
+            font-size:18px;
+            font-family:"Poppins",sans-serif;
+            font-weight:600;
+            margin-right:20px;
+        }
+        .social-icon{
+            height:25px;
+            width:25px; 
+        }
+        .wp-icon{
+            position: relative;
+            left:5px;
+            bottom:3px;
+        }
+        .h2-title{
+            margin-top:30px;
+        }
+        @media (max-width:500px)
+        {
+           .banner-h1{
+               font-size:40px;
+           }
+           .cookies-gif{
+               height:250px;
+               width:100%;
+           }
+           .banner-h2{
+               font-size:18px;
+           }
+           .banner-row{
+               padding-top:60px;
+           }
+           
+      
+        }
+    </style>
+</head>
+<body>
+    <section id="banner">
+        <div class="banner-cnt">
+            <div class="container">
+                <div class="row banner-row">
+                    <!-- <div class="col-md-2 col-12 col-sm-12 col-lg-2">
+
+                    </div> -->
+                    <div class="col-md-12 col-12 col-sm-12 col-lg-12 order-content">
+                        <h1 class="banner-h1">
+                            Thank You!
+                        </h1>
+                        <img src="{{ url_for('static', filename='/Images/cooking.gif') }}" class="cookies-gif">
+                       
+                        <div class="h2-title">
+                        <h2 class="banner-h2">
+                            Your Order will be ready in minutes!
+                        </h2>
+                        <h2 class="banner-h2">
+                            A confirmation is sent to your whatsapp number.
+                        </h2>
+                    </div>
+                        <div class="social-links">
+                           
+                            <a href="" class="social-link">
+                               <img src="{{ url_for('static', filename='Images/whatsapp.png') }}" class="social-icon wp-icon">
+                            </a>
+                            <a href="https://www.instagram.com/setupfood/" class="social-link">
+                                <img src="{{ url_for('static', filename='Images/instagram (1).png') }}" class="social-icon wp-icon">
+                            </a>
+                            <a href="https://www.facebook.com/SetupFood-110376855022483" class="social-link">
+                                <img src="{{ url_for('static', filename='Images/facebook-app-symbol.png') }}" class="social-icon">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-2 col-12 col-sm-12 col-lg-2">
+                        
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+            </div>
+            <div class="col-md-6 col-12 col-sm-12 col-lg-6 done-column" style="text-align:center;" data-aos="zoom-in">
+                <h1 class="order-h1 thanks-h1">
+                    Thanks for Your Order  <i class="fa fa-smile-o" aria-hidden="true"></i>
+                </h1>
+                    <img src="../static/Images/done.gif" class="done-gif">
+             
+                    <h1 class="order-h1">
+                        Your order will be ready in minutes!
+                    </h1>
+
+            </div>
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+                
+            </div>
+        </div>
+    </div> -->
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+
+<script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+<script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+
+</body>
+</html>

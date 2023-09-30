@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TakeAway Order</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/takeorder-login.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="{{ url_for('static', filename= 'formImage/{}'.format(logo)) }}" class="logo-img">
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/{{name}}/takemyorder">Take Order</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/{{name}}/changeorder">Update</a>
+            </li>
+         
+          </ul>
+        </div>
+      </nav>
+    <section id="waiter-takeorder">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+                </div>
+              <div class="col-md-6 col-12 col-sm-12 col-lg-6 takeorder-page-col">
+                <h1 class="waiter-takeorder-h1">
+                    Take Order 
+                </h1>
+                <form action="/{{name}}/takemyorder" method="POST" class="takeordernew-form">
+                    <label class="mylabel">
+                        Enter Table Number
+                    </label>
+                    <input type="text" class="form-control" name="table" placeholder="Eg: 3">
+                    <div id="mydome">
+                        <label class="mylabel">
+                            Select the item
+                        </label><br>
+                        <select id="inputState" class="myselect" name="dish[0]">
+                            <option selected>Choose...</option>
+                            {% for item in dish_items %}
+                            <option value="{{item}}" class="item">{{item}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="hidden" name="hidden" id="hidden">
+                        <label class="mylabel">
+                            Enter the Quantity
+                        </label>
+                        <input type="hidden" name="hidden1" id="hidden1">
+                        <input type="text" id="myqty" class="qty form-control" name="myqty[0]" placeholder="Quatity">
+
+                        <label class="mylabel">
+                            Enter the Addons
+                        </label>
+                        <input type="hidden" name="hidden2" id="hidden2">
+                        <input type="text" id="myaddon" class="qty form-control" name="myaddon[0]" placeholder="Addon">
+                    </div>
+
+                      <div id="newElementId"></div>
+
+                      <a onclick="myfun()" class="btn btn-lg new-item" style="color:white;">
+                        Add Item
+                    </a>
+                      <!-- <a id="order" > -->
+                          <button type="submit" class="btn btn-success order-btn new-item">Order</button>
+                        
+                      <!-- </a> -->
+                </form>
+
+              </div>
+              <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+              </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var i=0,j=0,k=0;
+        document.getElementById("hidden1").value=j;
+        document.getElementById("hidden").value=i;
+        document.getElementById("hidden2").value=k;
+        
+        function myfun(){
+            // const node  = document.getElementById("mydome");
+            var txtNewInputBox = document.createElement('div');
+            j=j+1;
+            i=i+1;
+            k=k+1;
+            
+            document.getElementById("hidden1").value=j;
+            document.getElementById("hidden").value=i;
+            document.getElementById("hidden2").value=k;
+            
+           
+            // const clone = node.cloneNode(true);
+            var txtNewInputBox = document.createElement('div');
+            txtNewInputBox.innerHTML = ' <div id="mydome"><label class="mylabel">Select the item</label><br><select id="inputState" class="myselect" name="dish['+i+']"><option selected>Choose...</option>{% for item in dish_items %}<option value="{{item}}" class="item">{{item}}</option>{% endfor %}</select><label class="mylabel">Enter the Quantity</label><input type="text" id="myqty['+j+']" class="qty form-control" name="myqty['+j+']" placeholder="Quatity"><label class="mylabel">Enter the Addons</label><input type="text" id="myaddon['+k+']" class="qty form-control" name="myaddon['+k+']" placeholder="Addons"></div>';
+
+            document.getElementById("newElementId").appendChild(txtNewInputBox);
+
+            // document.getElementById("newElementId").appendChild(clone);
+            // document.getElementById("myqty").defaultValue = "0";
+        }
+
+        document.getElementById("order").addEventListener('click', function(){
+            console.log(document.getElementsByClassName('qty').value)
+        })
+        
+    </script>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 240,
+            duration: 1000
+        });
+    </script>
+     <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+     <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+     <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

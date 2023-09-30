@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TakeAway Order</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/takeorder-login.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename= 'formImage/{}'.format(logo)) }}" class="logo-img">
+          </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/{{name}}/takemyorder">Take Order</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/{{name}}/changeorder">Update</a>
+            </li>
+         
+          </ul>
+        </div>
+      </nav>
+
+    <section id="waiter-takeorder">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+                </div>
+              <div class="col-md-6 col-12 col-sm-12 col-lg-6 takeorder-page-col">
+                  <div class="table-number">
+                        <h1 class="waiter-takeorder-h1">
+                            Update Order 
+                        </h1>
+                        <form action="/{{name}}/changeorder" method="POST" class="takeordernew-form">
+                            <label class="mylabel">
+                                Enter Table Number
+                            </label>
+                            <input type="text" class="form-control" name="table" placeholder="Eg: 3">
+                        
+
+                            <div id="newElementId"></div>
+
+                            <button class="btn btn-lg new-item" style="color:white;" >
+                            Search
+                            </button>
+
+                        </form>
+                    </div>
+
+                {%if mylength >= 1%}
+                <div class="mytable">
+                <h1 class="waiter-takeorder-h1 order-h1">
+                    Ordered Items of Table Number {{table_no}}
+                </h1>
+                <form action="{{url_for('storeItems')}}" method="POST">
+                    <select name="items" class="ordered_items">
+                        <option value="All" selected>Ordered Items</option>
+                        {% for i in range(len_of_item)%}
+                            <option value="{{myitem_list[i]}}">{{myitem_list[i]}} * {{myquantity_list[i]}}</option>
+                        {% endfor %}
+                    </select>
+           
+          
+
+                    <table class="table item-table" id="myTable">
+                        <thead class="thead-dark table-header">
+                        <tr class="table-success">
+                            <th scope="col">Sr No.</th>
+                            <th scope="col">Dish</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in range(0,len_of_item)%}
+                                <tr>
+                        
+                                    <td>
+                                        {{i+1}}
+                                    </td>
+  
+                                    <td>
+                                        {{myitem_list[i]}}
+                                    </td>
+                                    <td>
+                                        {{myquantity_list[i]}}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                    </tbody>
+                    </table>
+
+                    <button class="btn btn-lg new-item" style="color:white;" >
+                        Update
+                    </button>
+                
+                    </form>
+                </div>
+                    {%endif%}
+
+          
+            
+              </div>
+              <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+              </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 240,
+            duration: 1000
+        });
+    </script>
+     <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+     <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+     <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

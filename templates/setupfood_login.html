@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setupfood</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/setupfood_login.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      .phone-number{
+        font-size:14px;
+      }
+    </style>
+</head>
+<body>
+
+    <section id="login-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4 col-12"></div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-12 form-div" >
+                    <form id="login-form" method="POST" action="{{url_for('setupFoodLogin')}}">
+                        <h2 class="login-h">
+                            Login
+                        </h2>
+                        {%with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %} 
+                        <p class="err-msg" style="color:red;">{{message}}</p>
+                                {% endfor %} 
+                            {% endif %}
+                        {% endwith %}
+                        <label for="username" class="username">
+                            Your username:
+                        </label>
+                        <input type="text" class="form-control input-box" name="uname" required>
+                        <label for="password" class="username">
+                            Your Password:
+                        </label>
+                        <input type="password" class="form-control input-box" name="pwd" required>
+                        <button type="submit" class="btn btn-block login-btn">
+                            Login
+                        </button>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-12"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+      <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+      <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+      <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

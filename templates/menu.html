@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vishmenu.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/template#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/template#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/template#contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Review Us</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+  
+
+    <div class="container">
+        <div class="row menu-row">
+            <div class="col-md-2 col-sm-12 col-12 col-lg-2 menu-links">
+                <h1 class="menu-h1">
+                    MENU
+                </h1>
+                <ul class="menu-ul">
+                    <li><a href="#soups">Soups</a></li>
+                    <li><a href="#IndianStarter">Indian Starter</a></li>
+                    <li><a href="#ChineseStarter">Chinese Starter</a></li>
+                    <li><a href="#Sizzler">Sizzler</a></li>
+                    <li><a href="#OvenBaked">Oven Baked</a></li>
+                    <li><a href="#IndianMain">Indian Main Course</a></li>
+                    <li><a href="#KajuKofta">Kaju & Kofta</a></li>
+                    <li><a href="#mexican">Mexican</a></li>
+                    <li><a href="#italian">Italian</a></li>
+                    <li><a href="#thai">Thai</a></li>
+                    <li><a href="#punjabi">Punjabi</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10 col-sm-12 col-12 col-lg-10 menu-items-row">
+                <div style="text-align: center;">
+                    <img src="{{ url_for('static', filename='Images/blog-1.jpeg') }}" class="menu-image">
+                </div>
+
+                <div id="soups">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Soups
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div id="IndianStarter">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Indian Starter
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Kansar Special Veg
+                                </h1>
+                                <p class="price">
+                                    ₹ 260
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 260">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Veg. Kadalwala
+                                </h1>
+                                <p class="price">
+                                    ₹ 220
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 220">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Kolhapur Se Veg.
+                                </h1>
+                                <p class="price">
+                                    ₹ 220
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 220">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Jalpur Se Veg.
+                                </h1>
+                                <p class="price">
+                                    ₹ 220
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 220">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    HVeg Makkhanwala
+                                </h1>
+                                <p class="price">
+                                    ₹ 225
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="ChineseStarter">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Chinese Starter
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Veg. Hakka Noodles
+                                </h1>
+                                <p class="price">
+                                    ₹ 195
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 195">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Schezwan Noodles
+                                </h1>
+                                <p class="price">
+                                    ₹ 205
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 205">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Chilly Garlic Noodles
+                                </h1>
+                                <p class="price">
+                                    ₹ 205
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 205">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    American Chopsey
+                                </h1>
+                                <p class="price">
+                                    ₹ 205
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 205">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Singapure Fried Rice
+                                </h1>
+                                <p class="price">
+                                    ₹ 215
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 215">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="sizzlers">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Sizzlers
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Mexican Sizzler
+                                </h1>
+                                <p class="price">
+                                    ₹ 330
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 330">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Kansar Sp. Sizzler
+                                </h1>
+                                <p class="price">
+                                    ₹ 360
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 360">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Veg. Grilled Sizzler
+                                </h1>
+                                <p class="price">
+                                    ₹ 330
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 330">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Chinese Sizzlers
+                                </h1>
+                                <p class="price">
+                                    ₹ 340
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 340">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Paneer Stick P/A Sizzler
+                                </h1>
+                                <p class="price">
+                                    ₹ 350
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 350">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="OvenBaked">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Oven Baked
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Backed Macroni With P/A
+                                </h1>
+                                <p class="price">
+                                    ₹ 225
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 225">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Backed Spagatti With P/A
+                                </h1>
+                                <p class="price">
+                                    ₹ 225
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 225">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Mexican Trio
+                                </h1>
+                                <p class="price">
+                                    ₹ 230
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 230">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Texmas Enchillades
+                                </h1>
+                                <p class="price">
+                                    ₹ 230
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 230">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Burmese Spagatti
+                                </h1>
+                                <p class="price">
+                                    ₹ 225
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 225">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="IndianMain">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Indian Main Course
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="KajuKofta">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Kaju & Kofta
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="mexican">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        mexican
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="italian">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Italian
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="thai">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Thai
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="punjabi">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Punjabi 
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="desserts">
+                <div class="menu-items">
+                    <h1 class="type-h1">
+                        Desserts 
+                    </h1>
+                  
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Cream of Tomato Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 100">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Minestrone Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 115
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 115">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Tomato Corn Cheese Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 100
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Sweet Corn Veg. Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 105
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 105">
+                                    ADD
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row items">
+                            <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                        
+                                <h1 class="item-h1">
+                                    Hot & Sour Soup
+                                </h1>
+                                <p class="price">
+                                    ₹ 120
+                                </p>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                                <button class="btn btn-lg price-btn 120">
+                                    ADD
+                                </button>
+                            </div>
+                       
+                    </div>
+                </div>
+            </div>
+            </div>
+           
+        </div>
+    </div>
+
+
+    <section id="mobile-menu">
+        <div class="container">
+            <ul class="mobile-ul">
+                <li id="mobile-soup"><a href="#soups">Soups</a></li>
+                    <li id="mobile-indianstarter"><a href="#IndianStarter">Indian Starter</a></li>
+                    <li id="mobile-chinesestarter"><a href="#ChineseStarter">Chinese Starter</a></li>
+                    <li id="mobile-sizzler"><a href="#Sizzler">Sizzler</a></li>
+                    <li id="mobile-OvenBaked"><a href="#OvenBaked">Oven Baked</a></li>
+                    <li id="mobile-IndianMain"><a href="#IndianMain">Indian Main Course</a></li>
+                    <li id="mobile-KajuKofta"><a href="#KajuKofta">Kaju & Kofta</a></li>
+                    <li id="mobile-mexican"><a href="#mexican">Mexican</a></li>
+                    <li id="mobile-italian"><a href="#italian">Italian</a></li>
+                    <li id="mobile-thai"><a href="#thai">Thai</a></li>
+                    <li id="mobile-punjabi"><a href="#punjabi">Punjabi</a></li>
+                    <li id="mobile-desserts"><a href="#desserts">Desserts</a></li>
+            </ul>
+
+        </div>
+    </section>
+
+    <p id="menu"><i class="fa fa-bars" style="position:fixed;bottom:30px;right:20px;color: white; border-radius:50%; background-color:black; height:50px; width:50px; " aria-hidden="true"></i></p>
+            
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#mobile-menu").hide();
+            $("#menu").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-soup").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-indianstarter").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-chinesestarter").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-sizzler").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-OvenBaked").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-KajuKofta").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-mexican").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-italian").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-thai").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-punjabi").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $("#mobile-desserts").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+        })
+    </script>
+ 
+
+    
+ <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+ <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

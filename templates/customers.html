@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <title>
+       {{resta_name}} Dashboard
+   </title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Admin/dahboard.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('booktabledetails')}}">New Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('completedOrders')}}">Completed Orders</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('finalBill')}}">Bills</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="{{url_for('customers')}}">Your Customers</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('updateMenu')}}">Update Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('updatewebsite')}}">Update Website</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('personalinformation')}}">Personal Information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="sidebar">
+    <div class="logo-details">
+      
+        <div class="logo_name"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+       <a href="{{url_for('dashboard')}}">
+        <i class="fa fa-home" aria-hidden="true"></i>
+         <span class="links_name">Home</span>
+       </a>
+       <span class="tooltip">Home</span>
+     </li>
+     <li>
+       <a href="{{url_for('booktabledetails')}}">
+        <i class="fa fa-table" aria-hidden="true"></i>
+         <span class="links_name">New Orders</span>
+       </a>
+       <span class="tooltip">New Orders</span>
+     </li>
+     <li>
+      <a href="{{url_for('completedOrders')}}">
+       <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <span class="links_name">Completed Orders</span>
+      </a>
+      <span class="tooltip">Completed Orders</span>
+    </li>
+    <li>
+      <a href="{{url_for('finalBill')}}">
+        <i class="fa fa-file-text-o"></i>
+        <span class="links_name">Bills</span>
+      </a>
+      <span class="tooltip">Bills</span>
+    </li>
+
+    <li>
+        <a href="{{url_for('customers')}}" style="background-color: #ff471a;color:white;">
+          <i class="fa fa-user"></i>
+          <span class="links_name">Customer Analytics</span>
+        </a>
+        <span class="tooltip">Customer Analytics</span>
+      </li>
+     
+    <li>
+      <a href="{{url_for('updateMenu')}}">
+       <i class="fa fa-cutlery" aria-hidden="true"></i>
+        <span class="links_name">Update Menu</span>
+      </a>
+      <span class="tooltip">Update Menu</span>
+    </li>
+
+     <li>
+      <a href="{{url_for('updatewebsite')}}">
+       <i class="fa fa-globe" aria-hidden="true"></i>
+        <span class="links_name">Update Website</span>
+      </a>
+      <span class="tooltip">Update Website</span>
+    </li>
+
+    <li>
+      <a href="{{url_for('personalinformation')}}">
+       <i class="fa fa-info" aria-hidden="true"></i>
+        <span class="links_name">Personal Information</span>
+      </a>
+      <span class="tooltip">Personal Information</span>
+    </li>
+     <li>
+        <a href="{{url_for('logout')}}">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+    
+     
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">
+        <div class="container">
+            <div class="greeting-info">
+                <h2 class="greeting">
+              
+                    Hello {{resta_name}} !
+                </h2>
+                <h3 class="statisctics-h3">
+                   Analyse your customers and act accordingly to grow your sales!
+                </h3>
+            </div>
+
+            <div class="mydate">
+              Date :- {{date}}
+            </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid">
+        <div class="row card-row">
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-1">
+                <h4 class="card-title">
+                    Total Contacts
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="order-number">
+                            <strong>{{total_contacts}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/order.png') }}" class="order-img">
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-2">
+                <h4 class="card-title">
+                    Satisfied Customers
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="earning-number">
+                            <strong>{{satisfied_customers}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/money.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-3">
+                <h4 class="card-title">
+                    Happy Customers
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="client-number">
+                            <strong>{{happy_customers}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/customer.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-4">
+                <h4 class="card-title">
+                    Unhappy Customers
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="review-number">
+                            <strong>{{unhappy_customers}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/reviews.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container-fluid reviews-section">
+        <div class="row">
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+            
+          </div>
+          <div class="col-md-10 col-12 col-sm-12 col-lg-10">
+            <h2 class="greeting cutomer-heading">
+              Customer Reviews :-
+            </h2>
+          </div>
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+            
+          </div>
+        </div>
+        <div class="row reviews-row">
+          
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+
+          </div>
+        
+          <div class="col-md-10 col-12 col-sm-12 col-lg-10 reviews-col" style="overflow-y: scroll;height:350px;">
+           
+            <div class="row parent-reviews-row">
+              <div class="col-md-1 col-2 col-sm-2 col-lg-1">
+                <h4 class="title-h4">
+                  ID
+                </h4>
+              </div>
+              <div class="col-md-3 col-2 col-sm-2 col-lg-3">
+                <h4 class="title-h4">
+                  Name
+                </h4>
+              </div>
+              <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                <h4 class="title-h4">
+                  Contact Number
+                </h4>
+              </div>
+             
+
+              <div class="col-md-5 col-5 col-sm-5 col-lg-5">
+                <h4 class="title-h4">
+                  Message
+                </h4>
+              </div>
+            </div>
+            {% if feedback_length == 0%}
+            
+              <p class="no-data-p"> No Feedbacks!</p>
+            
+            {% else %}
+            {% for i in range(feedback_length) %}
+            <div class="row inner-review-row" >
+              <div class="col-md-1 col-2 col-sm-2 col-lg-1">
+                <h4 class="title-h4">
+                  {{i+1}}
+                </h4>
+              </div>
+              <div class="col-md-3 col-2 col-sm-2 col-lg-3">
+                <h4 class="title-h4">
+                  {{all_feedback[i][2]}}
+                </h4>
+              </div>
+              <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                <h4 class="title-h4">
+                  {{all_feedback[i][3]}}
+                </h4>
+              </div>
+
+              <div class="col-md-5 col-5 col-sm-5 col-lg-5">
+                <h4 class="title-h4">
+                {{all_feedback[i][5]}}
+                </h4>
+              </div>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+           
+          </div>
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+            
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="container-fluid reviews-section">
+        <div class="row">
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+            
+          </div>
+          <div class="col-md-10 col-12 col-sm-12 col-lg-10">
+            <h2 class="greeting cutomer-heading">
+              Contact Us :-
+            </h2>
+          </div>
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+            
+          </div>
+        </div>
+        <div class="row reviews-row contact-row" style="padding-bottom: 50px;">
+          
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+
+          </div>
+
+          <div class="col-md-10 col-12 col-sm-12 col-lg-10 reviews-col" style="overflow-y: scroll;height:350px;">
+            <div class="row parent-reviews-row">
+              <div class="col-md-1 col-2 col-sm-2 col-lg-1">
+                <h4 class="title-h4">
+                  ID
+                </h4>
+              </div>
+              <div class="col-md-3 col-2 col-sm-2 col-lg-3">
+                <h4 class="title-h4">
+                  Name
+                </h4>
+              </div>
+              <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                <h4 class="title-h4">
+                  Contact Number
+                </h4>
+              </div>
+             
+
+              <div class="col-md-5 col-5 col-sm-5 col-lg-5">
+                <h4 class="title-h4">
+                  Message
+                </h4>
+              </div>
+            </div>
+            {% if contact_length == 0%}
+            
+              <p class="no-data-p"> No Contacts!</p>
+            
+            {% else %}
+            {% for i in range(contact_length) %}
+            <div class="row inner-review-row" >
+              <div class="col-md-1 col-2 col-sm-2 col-lg-1">
+                <h4 class="title-h4">
+                  {{i+1}}
+                </h4>
+              </div>
+              <div class="col-md-3 col-2 col-sm-2 col-lg-3">
+                <h4 class="title-h4">
+                  {{contact_details[i][2]}}
+                </h4>
+              </div>
+              <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                <h4 class="title-h4">
+                  {{contact_details[i][3]}}
+                </h4>
+              </div>
+
+              <div class="col-md-5 col-5 col-sm-5 col-lg-5">
+                <h4 class="title-h4">
+                {{contact_details[i][4]}}
+                </h4>
+              </div>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+           
+          </div>
+          <div class="col-md-1 col-12 col-sm-12 col-lg-1">
+            
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+      
+        closeBtn.addEventListener("click", ()=>{
+          sidebar.classList.toggle("open");
+          menuBtnChange();//calling the function(optional)
+        });
+      
+        searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+          sidebar.classList.toggle("open");
+          menuBtnChange(); //calling the function(optional)
+        });
+      
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+         if(sidebar.classList.contains("open")){
+           closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+         }else {
+           closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+         }
+        }
+        </script>
+      
+      <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+      <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+      <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

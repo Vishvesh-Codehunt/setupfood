@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    <title>Signup</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nstyles.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <sectio id="login">
+        <div class="container">
+            <div class="form-container row">
+                <div class="col-md-6 col-sm-12 col-lg-6 signup-l">
+                    <h1 class="title-p">
+                        Welcome Back!
+                    </h1>
+                    <p class="signup-p">
+                      Welcome to Setupfood! <br>
+                      Manage your total sales, orders either dine-in, take-away or online orders, and total customers at one place!
+                  </p>
+                    <!-- <input type="submit" value="Signup" class="signup-btn solid"> -->
+                    <a href="/login"><button type="submit" class="btn btn-block signup-btn">Login</button></a>
+                </div>
+                <div class="col-md-6 col-sm-12 col-lg-6 ">
+                    <form action="{{url_for('signup')}}" method="POST" class="sign-up-form">
+                        <h2 class="title">Sign up</h2>
+                        {% with messages = get_flashed_messages() %}
+                          {% if messages %}
+                            {% for message in messages %}
+                              <p class="myerrormessage" style="color:red;font-size:18px;">{{message}}</p>
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                        <div class="input-field">
+                          <i class="fa fa-envelope"></i>
+                          <input type="email" placeholder="Enter your Email" name="email" required/>
+                        </div>
+                        <div class="input-field">
+                          <i class="fa fa-user"></i>
+                          <input type="text" placeholder="Your Restaurant name" name="rname" required/>
+                        </div>
+                        <div class="input-field">
+                          <i class="fa fa-lock"></i>
+                          <input type="password" id="passwd" placeholder="Set Password" name="password" minlength="6" maxlength="20" required />
+                          <p class="err-msg" style="color: red;" id="error-msg"></p>
+                        </div>
+                        
+                        <!-- <input type="submit" class="btn" value="Sign up" /> -->
+                        <button type="submit"  class="btn btn-block signup-btn" onclick="checkpassword(document.getElementById('passwd'))">SignUp</button>
+                       
+                      </form>
+                </div>
+            </div>
+    </section>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        function checkpassword(inputtxt)
+        {
+          var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+          if(inputtxt.value.match(passw))
+          {
+            return true;
+          } 
+          else{
+            document.getElementById('error-msg').innerHTML = "Invalid Password."
+            return false;
+          }
+        }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 240,
+            duration: 1000
+        });
+    </script>
+   <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+   <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+   <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

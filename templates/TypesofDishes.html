@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setupfood</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <div class=" form-container">
+        <div class="row form-row">
+            <div class="col-md-4 col-sm-12 col-12 col-lg-4 form-left-col ">
+                <div class="titles">
+                    <p class="form-p">
+                        <span class="number">1</span>
+                        <a href="#" class="form-link">Restaurant Information</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="number">2</span>
+                        <a href="#" class="form-link">Restaurant Contact Information</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="active">3</span>
+                        <a href="#" class="form-link">Types Of Dishes</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="number">4</span>
+                        <a href="#" class="form-link">Menu Information</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-7 col-12 col-sm-12 col-lg-7 form-right-col">
+                <h1 class="form-header">
+                    Enter All Type Of Dishes that You Provide
+                </h1>
+                <p class="form-right-p">
+                    Click on the plus icon to add more dishes.
+                </p>
+
+                <form action="{{url_for('typesOfDishes')}}" method="post" class="information-form">
+
+                      <div class="row" id="priceanditem">
+                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 mt-4">
+                            <label class="form-label">
+                                Enter Type Of Dish*
+                            </label>
+                          <input type="text" name="dishType" class="form-control" required placeholder="E.g Salad">
+                        </div>
+
+                      
+                      </div>
+
+                    <div class="new-dish-btn">
+                      <p class="form-bottom-p">
+                          Fill the required inputs or you won't be able to jump to the next step.
+                      </p>
+                      <button type="submit" class="btn btn-lg submit-btn mb-5">Add Dish</button>
+                    </div>
+
+                    <div class="hr-div">
+                        <hr class="bottom-hr">
+                    </div>
+                    
+                    <div class="form-numbers">
+                        <span class="form-number">1</span>
+                        <span class="form-number">2</span>
+                        <span class="form-number active">3</span>
+                    </div>
+                  </form>
+
+                  <div class="row">
+                      <div class="col-md-8 col-12 col-sm-12 col-lg-8">
+
+                      </div>
+                      <div class="col-md-4 col-12 col-sm-12 col-lg-4">
+                          <a href="{{url_for('menudetails')}}">
+                        <button class="btn btn-lg submit-btn mb-5">Go to Step 4</button> </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/JavaScript">
+        function createNewElement() {
+            // First create a DIV element.
+            var txtNewInputBox = document.createElement('div');
+        
+            // Then add the content (a new input box) of the element.
+            txtNewInputBox.innerHTML = '   <div class="row" id="priceanditem"><div class="col-12 col-sm-12 col-lg-12 col-md-12 mt-4"><label class="form-label">Enter Type Of Dish*</label><input type="text" class="form-control" required placeholder="E.g Salad"></div> </div>';
+        
+            // Finally put it where it is supposed to appear.
+            document.getElementById("newElementId").appendChild(txtNewInputBox);
+        }
+        </script>
+
+   
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+   
+   <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+    <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

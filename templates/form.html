@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setupfood</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <div class="container-fluid form-container">
+        <div class="row form-row">
+            <div class="col-md-4 col-sm-12 col-12 col-lg-4 form-left-col ">
+                <div class="titles">
+                    <p class="form-p">
+                        <span class="active">1</span>
+                        <a href="#" class="form-link">Restaurant Information</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="number">2</span>
+                        <a href="#" class="form-link">Restaurant Contact Information</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="number">3</span>
+                        <a href="#" class="form-link">Types Of Dishes</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="number">4</span>
+                        <a href="#" class="form-link">Menu Information</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-7 col-12 col-sm-12 col-lg-7 form-right-col">
+                <h1 class="form-header">
+                    Fill Up Restaurant's Basic Details
+                </h1>
+                <p class="form-right-p">
+                    Remember, once you click the submit button, you can not come back untill you publish your website.Once the website is ready, you can change the details from your dashboard.
+                </p>
+                <form action="{{url_for('details')}}" method="post" enctype="multipart/form-data" class="information-form">
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-lg-6 col-md-6 mt-4">
+                          <label class="form-label">
+                              Restaurant's Name*
+                          </label>
+                        <input type="text" name="rname" class="form-control" placeholder="Restaurant's name" required>
+                      </div>
+                      <div class="col-12 col-sm-12 col-lg-6 col-md-6 mt-4">
+                        <label class="form-label">
+                            Restaurant's Tagline*
+                        </label>
+                        <input type="text" name="tagline" class="form-control" placeholder="Restaurant's Tagline" required>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-lg-6 col-md-6 mt-4">
+                            <label class="form-label">
+                                Restaurant's Opening Time*
+                            </label>
+                          <input type="time" name="ohour" class="form-control" placeholder="Restaurant's name" required>
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-6 col-md-6 mt-4">
+                          <label class="form-label">
+                              Restaurant's Closing Time*
+                          </label>
+                          <input type="time" name="chour" class="form-control" placeholder="Restaurant's Tagline" required>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-12 col-12 col-sm-12 col-lg-12 mt-4">
+                            <label class="form-label">
+                                Is GST applicable?*
+                            </label>
+                              <select class="form-control" name="gst" id="gst">
+                                  <option value="Yes">Yes</option>
+                                  <option value="No">No</option>
+                              </select>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-12 col-sm-12 col-lg-12 col-md-12 mt-4">
+                            <label class="form-label">
+                                About Your Restaurant*
+                            </label>
+                          <textarea class="form-control txtarea" name="about" style="height:100px;" placeholder="About Your Restaurant"></textarea>
+                        </div>
+                      </div>
+
+                      <h1 class="form-header mt-5 mb-5 second-header">
+                        Choose Restaurant's Logo and Images
+                    </h1>
+                    <div class="row mt-5">
+                        <div class="col">
+                            <label class="form-label">
+                                Restaurant's Logo*
+                            </label>
+                            <input type="file" name="logo" class="form-control-file" id="exampleFormControlFile1" required>
+                        </div>
+                        <div class="col">
+                          <label class="form-label">
+                              Restaurant's Banner*
+                          </label>
+                          <input type="file"  name="banner" class="form-control-file" id="exampleFormControlFile1" required>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col">
+                            <label class="form-label">
+                                Restaurant's Image 1*
+                            </label>
+                            <input type="file" name="img1" class="form-control-file" id="exampleFormControlFile1" required>
+                        </div>
+                        <div class="col">
+                          <label class="form-label">
+                              Restaurant's Image 2*
+                          </label>
+                          <input type="file" name="img2" class="form-control-file" id="exampleFormControlFile1" required>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col">
+                            <label class="form-label">
+                                Restaurant's Image 3*
+                            </label>
+                            <input type="file" name="img3" class="form-control-file" id="exampleFormControlFile1" required>
+                        </div>
+                        <div class="col">
+                          <label class="form-label">
+                              Restaurant's Image 4*
+                          </label>
+                          <input type="file" name="img4" class="form-control-file" id="exampleFormControlFile1" required>
+                        </div>
+                      </div>
+                      <p class="form-bottom-p">
+                          Fill the required inputs or you won't be able to jump to the next step.
+                      </p>
+                      <div class="next-btn">
+                        <button  type="submit" class="btn btn-lg submit-btn mb-5">Next</button>
+                    </div>
+                    <div class="hr-div">
+                        <hr class="bottom-hr">
+                    </div>
+                    <div class="form-numbers">
+                        <span class="form-number active">1</span>
+                        <span class="form-number">2</span>
+                        <span class="form-number">3</span>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+  <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+  <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

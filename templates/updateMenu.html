@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>
+    {{name}} Dashboard
+  </title>
+  <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Admin/dahboard.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('booktabledetails')}}">New Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('completedOrders')}}">Completed Orders</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('finalBill')}}">Bills</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('customers')}}">Your Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('updateMenu')}}">Update Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('updatewebsite')}}">Update Website</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('personalinformation')}}">Personal Information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="sidebar">
+    <div class="logo-details">
+
+      <div class="logo_name"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="{{url_for('dashboard')}}">
+          <i class="fa fa-home" aria-hidden="true"></i>
+          <span class="links_name">Home</span>
+        </a>
+        <span class="tooltip">Home</span>
+      </li>
+      <li>
+        <a href="{{url_for('booktabledetails')}}">
+          <i class="fa fa-table" aria-hidden="true"></i>
+          <span class="links_name">New Orders</span>
+        </a>
+        <span class="tooltip">New Orders</span>
+      </li>
+      <li>
+        <a href="{{url_for('completedOrders')}}">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+          <span class="links_name">Completed Orders</span>
+        </a>
+        <span class="tooltip">Completed Orders</span>
+      </li>
+      <li>
+        <a href="{{url_for('finalBill')}}">
+          <i class="fa fa-file-text-o"></i>
+          <span class="links_name">Bills</span>
+        </a>
+        <span class="tooltip">Bills</span>
+      </li>
+
+      <li>
+        <a href="{{url_for('customers')}}">
+          <i class="fa fa-user"></i>
+          <span class="links_name">Customer Analytics</span>
+        </a>
+        <span class="tooltip">Customer Analytics</span>
+      </li>
+
+      <li>
+        <a href="{{url_for('updateMenu')}}" style="background-color: #ff471a;color:white;">
+          <i class="fa fa-cutlery" aria-hidden="true"></i>
+          <span class="links_name">Update Menu</span>
+        </a>
+        <span class="tooltip">Update Menu</span>
+      </li>
+
+      <li>
+        <a href="{{url_for('updatewebsite')}}">
+         <i class="fa fa-globe" aria-hidden="true"></i>
+          <span class="links_name">Update Website</span>
+        </a>
+        <span class="tooltip">Update Website</span>
+      </li>
+
+      <li>
+        <a href="{{url_for('personalinformation')}}">
+         <i class="fa fa-info" aria-hidden="true"></i>
+          <span class="links_name">Personal Information</span>
+        </a>
+        <span class="tooltip">Personal Information</span>
+      </li>
+      <li>
+        <a href="{{url_for('logout')}}">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+
+
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="text">
+      <div class="container">
+
+
+        <div class="greeting-info">
+          <h2 class="greeting">
+            Hello {{name}} !
+          </h2>
+          <h3 class="statisctics-h3">
+            Here you can update your menu by selecting the dish type!
+          </h3>
+        </div>
+
+        <div class="mydate">
+          Date :- {{date}}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid template-container">
+
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="menu-update-card menu-card-1">
+            <h6 class="update-subheading update-sub-h">
+              Update Dish Types
+            </h6>
+            <form action="{{url_for('updateDish')}}" method="POST" id="update-dishtype-form">
+              <select name="dishtype" id="update-dishtype-select">
+                <option value="All" selected>Select a dish</option>
+                {% for dish in dishes %}
+                <option value="{{ dish[0] }}">{{ dish[1] }}</option>
+                {% endfor %}
+              </select>
+              <input type="text" class="form-control updated-item" name="updatedItem"
+                placeholder="Eg.: gujarati-special" required>
+              <button type="submit" class="button-24 btn btn-lg">Update</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="menu-update-card menu-card-2">
+            <h6 class="update-subheading update-sub-h">
+              Delete Dish Types
+            </h6>
+            <form action="{{url_for('deleteDish')}}" method="POST" id="delete-dishtype-form">
+              <select name="dishtype" id="delete-dishtype-select" required>
+                <option value="All" selected>Select a dish</option>
+                {% for dish in dishes %}
+                <option value="{{ dish[0] }}">{{ dish[1] }}</option>
+                {% endfor %}
+              </select >
+              <button type="submit" class="button-24 btn btn-lg delete-dish-btn">Delete</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-12">
+          <div class="menu-update-card menu-card-3">
+            <h6 class="update-subheading update-sub-h">
+              Add new Dish Types
+            </h6>
+            <form action="{{url_for('addnewDish')}}" method="POST" id="new-dishtype-form">
+              <input type="text" class="form-control updated-item" name="newItem" placeholder="Eg.: Cold drinks" required>
+              <button type="submit" class="button-24 btn btn-lg add-dish-btn">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-12 col-md-2 col-lg-2 col-12"></div>
+        <div class="col-sm-12 col-md-8 col-lg-8 col-12">
+          <div class="container dishtype-div">
+            <h4 class="update-items-subheading">
+              Update Dish Items
+            </h4>
+            <form action="{{url_for('updateMenu')}}" method="POST" id="dishtype-form">
+              <select name="dishtype" id="dishtype-select">
+                <option value="All" selected>Select a dish</option>
+                {% for dish in dishes %}
+                <option value="{{ dish[0] }}">{{ dish[1] }}</option>
+                {% endfor %}
+              </select>
+            </form>
+            <table class="table table-responsive-sm" id="myTable">
+              <thead class="thead-dark table-header">
+                <tr class="table-success">
+                  <th scope="col">Sr No.</th>
+                  <th scope="col">Dish</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {% for i in range(0,mylen) %}
+                <tr>
+                  <td class="myindex">{{ i+1 }}</td>
+                  <td class="myitems">{{dish_name[0][i]}}</td>
+                  <td class="pricelist">{{dish_price[0][i]}}</td>
+                  <td class="descriptionlist">{{dish_desc[0][i]}}</td>
+                  <td>
+                    <button class="action-btn edit-btn"> <i class="fa fa-pencil" aria-hidden="true"
+                        style="color: blue; font-size: 22px; margin-left: 5px;"></i> </button>
+                    <button class="action-btn trash-btn"> <i class="fa fa-trash" aria-hidden="true"
+                        style="color: red; font-size: 22px;"></i> </button>
+                  </td>
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+            <form action="{{url_for('storeUpdateMenu')}}" method="post" id="update-form">
+              <input type="hidden" id="dish_id" value="{{dish_id}}" name="dish_id" required>
+              <input type="hidden" id="items_list" name="items_list" required>
+              <input type="hidden" id="price_list" name="price_list" required>
+              <input type="hidden" id="descr_list" name="descr_list" required>
+              <button type="submit" class="button-24 btn btn-lg">Update</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2 col-12"></div>
+      </div>
+
+      <div class="row add-new-item-div">
+        <div class="col-sm-12 col-md-2 col-lg-2 col-12"></div>
+        <div class="col-sm-12 col-md-8 col-lg-8 col-12 newItem-row">
+          <h4 class="update-items-subheading">
+            Add new Dish Items
+          </h4>
+          <form action="{{url_for('addnewDishItem')}}" method="POST">
+            <select name="dishtype" id="newItemadd-dishtype-select">
+              <option value="All" selected>Select a dish</option>
+              {% for dish in dishes %}
+              <option value="{{ dish[0] }}">{{ dish[1] }}</option>
+              {% endfor %}
+            </select>    
+          <div class="row">
+            
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+              <label for="ItemName" class="label-add">Item Name:</label>
+              <input type="text" class="form-control new-dish-item-input first-input" name="ItemName"
+                placeholder="Eg. : Biryani" required>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+              <label for="ItemPrice"  class="label-add">Item Price:</label>
+              <input type="text" class="form-control new-dish-item-input" name="ItemPrice" placeholder="Eg. : ₹450" required>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-12">
+              <label for="ItemDesc"  class="label-add1">Item Description:</label>
+              <input type="text" class="form-control new-dish-item-input" name="ItemDesc"
+                placeholder="Eg. :a spiced mix of meat and rice, traditionally cooked over an open fire in a leather pot" required>
+            </div>
+          </div>
+
+          <button type="submit" class="button-24 btn btn-lg">Add</button>
+          </form>
+
+
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2 col-12"></div>
+      </div>
+
+    </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Edit Dish Item</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="{{url_for('editDishItem')}}" method="POST" id="new-modal-form">
+
+            <div class="modal-body">
+              <input type="hidden" name="dish_id" value="{{dish_id}}" required>
+              <input type="hidden" name="title_index" id="title_index_input" required>
+              <input type="text" class="form-control updated-item" name="editItem" placeholder="Eg.: Cold drinks" id="myitem" required>
+              <input type="text" class="form-control updated-item" name="editPrice" placeholder="Eg.: 80" id="myprice" required>
+              <input type="text" class="form-control updated-item" name="editDescr"
+                placeholder="Eg.: RefreshingCold drinks" id="mydescr" required>
+
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-lg button-24" data-dismiss="modal">Close</button>
+              <button type="submit" class="button-24 btn btn-lg">Add</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      $(document).off('focusin.modal');
+      $('#exampleModalCenter').on('shown.bs.modal', function () {
+        $('#myinput').trigger('focus')
+      })
+
+    </script>
+
+
+    <script>
+      selected_dish = document.getElementById('dishtype-select');
+      dish_form = document.getElementById('dishtype-form');
+      selected_dish.addEventListener('change', function (event) {
+        console.log(selected_dish.value);
+        dish_form.submit();
+      })
+
+    </script>
+
+
+    <script>
+      var myindex = document.getElementsByClassName('myindex');
+      myindex_array = [];
+      var myitems = document.getElementsByClassName('myitems');
+      myitems_array = [];
+      var pricelist = document.getElementsByClassName('pricelist');
+      pricelist_array = [];
+      var descriptionlist = document.getElementsByClassName('descriptionlist')
+      descr_array = [];
+
+      var dish_id = document.getElementById('dishtype-select');
+      var dish_id_value = dish_id.value;
+      console.log(dish_id_value);
+
+
+      for (var i = 0; i < myindex.length; i++) {
+        myindex_array.push(parseInt(myindex[i].innerText));
+        myitems_array.push((myitems[i].innerText));
+        pricelist_array.push((pricelist[i].innerText));
+        descr_array.push((descriptionlist[i].innerText));
+      }
+      //   console.log(myindex);
+      //   console.log(myindex_array);
+      //   console.log(myitems_array);
+      //   console.log(pricelist_array);
+      //   console.log(descr_array);
+      deletbtn = document.getElementsByClassName('trash-btn');
+      console.log(deletbtn);
+      for (var i = 0; i < deletbtn.length; i++) {
+        var btn = deletbtn[i];
+        btn.addEventListener('click', function (event) {
+          var clickedBtn = event.target;
+          // console.log(clickedBtn.parentElement.parentElement.parentElement);
+
+          const removed_item_index = clickedBtn.parentElement.parentElement.parentElement.children[0].innerText.trim();
+
+          var title_index = 0;
+
+          for (var i = 0; i < myindex_array.length; i++) {
+            if (myindex_array[i] == parseInt(removed_item_index)) {
+              title_index = i;
+            }
+          }
+
+          // console.log(title_index);
+          myitems_array.splice(title_index, 1);
+          pricelist_array.splice(title_index, 1);
+          descr_array.splice(title_index, 1);
+          myindex_array.splice(title_index, 1);
+          document.getElementById('myTable').deleteRow(title_index + 1);
+
+          // console.log(myitems_array);
+          // console.log(pricelist_array);
+          // console.log(descr_array);
+
+          document.getElementById('items_list').value = myitems_array;
+          document.getElementById('price_list').value = pricelist_array;
+          document.getElementById('descr_list').value = descr_array;
+
+        })
+      }
+
+      editbtns = document.getElementsByClassName('edit-btn');
+      console.log(editbtns);
+      for (var i = 0; i < editbtns.length; i++) {
+        var btn = editbtns[i];
+        btn.addEventListener('click', function (event) {
+          var clickedBtn = event.target;
+          // console.log(clickedBtn.parentElement.parentElement.parentElement);
+
+          const edited_item_index = clickedBtn.parentElement.parentElement.parentElement.children[0].innerText.trim();
+          const edited_item_name = clickedBtn.parentElement.parentElement.parentElement.children[1].innerText.trim();
+          const edited_item_price = clickedBtn.parentElement.parentElement.parentElement.children[2].innerText.trim();
+          const edited_item_description = clickedBtn.parentElement.parentElement.parentElement.children[3].innerText.trim();
+
+
+          var title_index = 0;
+
+          for (var i = 0; i < myindex_array.length; i++) {
+            if (myindex_array[i] == parseInt(edited_item_index)) {
+              title_index = i;
+            }
+          }
+          $('#exampleModalCenter').modal('show')
+          document.getElementById('myitem').value = edited_item_name;
+          document.getElementById('myprice').value = edited_item_price;
+          document.getElementById('mydescr').value = edited_item_description;
+          document.getElementById('title_index_input').value = title_index;
+
+          // console.log(title_index);
+          // myitems_array.splice(title_index, 1);
+          // pricelist_array.splice(title_index, 1);
+          // descr_array.splice(title_index, 1);
+          // myindex_array.splice(title_index, 1);
+          // document.getElementById('myTable').deleteRow(title_index + 1);
+
+          // console.log(myitems_array);
+          // console.log(pricelist_array);
+          // console.log(descr_array);
+
+          // document.getElementById('items_list').value = myitems_array;
+          // document.getElementById('price_list').value = pricelist_array;
+          // document.getElementById('descr_list').value = descr_array;
+
+        })
+      }
+
+
+
+    </script>
+
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let closeBtn = document.querySelector("#btn");
+      let searchBtn = document.querySelector(".bx-search");
+
+      closeBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+        menuBtnChange();//calling the function(optional)
+      });
+
+      function menuBtnChange() {
+        if (sidebar.classList.contains("open")) {
+          closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+        } else {
+          closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+        }
+      }
+    </script>
+
+
+<script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

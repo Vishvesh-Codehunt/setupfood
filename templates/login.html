@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Now, it's time to digitalise your restaurant. Setupfood is QR code based ordering system and billing system that can replace the wiaters who take the orders, physical menu cards, your billing software and create a user friendly web application for your restaurant.">
+    <meta name="keywords" content="Login Setupfood, Setupfood, QR code based ordering system, ordering system, billing system, digitalise your restaurant">
+    <meta name="og:title" content="Login">
+    <meta itemprop="name" content="Login">
+    <meta itemprop="description" content="Login to setupfood to access your restaurant's dashboard">
+    <meta name="author" content="Setupfood">
+
+    <title>Login</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nstyles.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <section id="login">
+        <div class="container">
+            <div class="form-container row">
+                <div class="col-md-6 col-sm-12 col-lg-6">
+                
+                    <form action="{{url_for('login')}}" method="POST" class="sign-in-form">
+                        <h2 class="title"> Login</h2>
+                        {%with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %} 
+                        <p class="err-msg" style="color:red;">{{message}}</p>
+                                {% endfor %} 
+                            {% endif %}
+                        {% endwith %}
+                        <div class="input-field">
+                            <i class="fa fa-user"></i>
+                            <input type="email" placeholder="E-mail" name="email" required />
+                        </div>
+                        <div class="input-field">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" placeholder="Password" name="password" required />
+                        </div>
+                        <!-- <input type="submit" value="Login" class="btn-solid" /> -->
+                        <button type="submit" class="btn btn-block btn-solid">Login</button>
+                       
+                    </form>
+                </div>
+                <div class="col-md-6 col-sm-12 col-lg-6 signup-l">
+                    <h1 class="title-p">
+                        Hello, Friend!
+                    </h1>
+                    <p class="signup-p">
+                        Welcome to Setupfood! <br>
+                        Manage your total sales, orders either dine-in, take-away or online orders, and total customers at one place!
+                    </p>
+                    <!-- <input type="submit" value="Signup" class="signup-btn solid"> -->
+                    <a href="/partner"><button type="submit" class="btn btn-block signup-btn">Contact Us</button></a>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 240,
+            duration: 1000
+        });
+    </script>
+  <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+  <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

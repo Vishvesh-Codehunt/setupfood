@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <title>
+       {{resta_name}} Dashboard
+   </title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Admin/dahboard.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+   </head>
+<body style="background-color: #E4E9F7;">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('booktabledetails')}}">New Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('completedOrders')}}">Completed Orders</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('finalBill')}}">Bills</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('customers')}}">Your Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('updateMenu')}}">Update Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('updatewebsite')}}">Update Website</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('personalinformation')}}">Personal Information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="sidebar">
+    <div class="logo-details">
+      
+        <div class="logo_name"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+       <a href="{{url_for('dashboard')}}" style="background-color: #ff471a;color:white;">
+        <i class="fa fa-home" aria-hidden="true"></i>
+         <span class="links_name">Home</span>
+       </a>
+       <span class="tooltip">Home</span>
+     </li>
+     <li>
+       <a href="{{url_for('booktabledetails')}}">
+        <i class="fa fa-table" aria-hidden="true"></i>
+         <span class="links_name">New Orders</span>
+       </a>
+       <span class="tooltip">New Orders</span>
+     </li>
+     <li>
+      <a href="{{url_for('completedOrders')}}">
+       <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <span class="links_name">Completed Orders</span>
+      </a>
+      <span class="tooltip">Completed Orders</span>
+    </li>
+    <li>
+      <a href="{{url_for('finalBill')}}">
+        <i class="fa fa-file-text-o"></i>
+        <span class="links_name">Bills</span>
+      </a>
+      <span class="tooltip">Bills</span>
+    </li>
+
+    <li>
+      <a href="{{url_for('customers')}}">
+        <i class="fa fa-user"></i>
+        <span class="links_name">Customer Analytics</span>
+      </a>
+      <span class="tooltip">Customer Analytics</span>
+    </li>
+     
+    <li>
+      <a href="{{url_for('updateMenu')}}">
+       <i class="fa fa-cutlery" aria-hidden="true"></i>
+        <span class="links_name">Update Menu</span>
+      </a>
+      <span class="tooltip">Update Menu</span>
+    </li>
+
+     <li>
+      <a href="{{url_for('updatewebsite')}}">
+       <i class="fa fa-globe" aria-hidden="true"></i>
+        <span class="links_name">Update Website</span>
+      </a>
+      <span class="tooltip">Update Website</span>
+    </li>
+
+    <li>
+      <a href="{{url_for('personalinformation')}}">
+       <i class="fa fa-info" aria-hidden="true"></i>
+        <span class="links_name">Personal Information</span>
+      </a>
+      <span class="tooltip">Personal Information</span>
+    </li>
+     <li>
+        <a href="{{url_for('logout')}}">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+    
+     
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">
+        <div class="container">
+            <div class="greeting-info">
+                <h2 class="greeting">
+              
+                    Hello {{resta_name}} !
+                </h2>
+                <h3 class="statisctics-h3">
+                    Here is your overall statistics 
+                </h3>
+            </div>
+
+            <div class="mydate">
+              Date :- {{date}}
+            </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row card-row">
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-1">
+                <h4 class="card-title">
+                    Order Today
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="order-number">
+                            <strong>{{orders_today}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/order.png') }}" class="order-img">
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-2">
+                <h4 class="card-title">
+                    Payments Today
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="earning-number">
+                            <strong>₹{{total_today_amount}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/money.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-3">
+                <h4 class="card-title">
+                    Orders This Month
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="client-number">
+                            <strong>{{total_orders_this_month}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/customer.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-12 col-lg-3 statisctics-card-4">
+                <h4 class="card-title">
+                    Payments This Month
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="review-number">
+                            <strong>₹{{payment_this_month}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/reviews.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- <div class="container-fluid template-container">
+          <h1 class="template-header">
+              Choose The Template
+          </h1>
+          <div class="row template-row">
+              <div class="col-md-4 col-sm-12 col-lg-4 col-12 template-1">
+                <div class="card" style="width: 100%;">
+                    <a href="#">
+                        <img class="card-img-top" src="../static/Images/Admin/temaplate1.PNG" alt="Card image cap">
+                    </a>
+                    <div class="card-body" style="padding:0px;">
+                      <a href="{{url_for('template')}}" class="t2-link">
+                        <button class="btn btn-block btn-primary" style="border-radius:0px;">
+                            View Template
+                        </button>
+                    </a>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-lg-4 col-12 template-2">
+                <div class="card" style="width: 100%;">
+                    <a href="#">
+                        <img class="card-img-top" src="../static/Images/Admin/temaplate1.PNG" alt="Card image cap">
+                    </a>
+                    <div class="card-body" style="padding:0px;">
+                      <a href="{{url_for('template')}}" class="t1-link">
+                        <button class="btn btn-block btn-primary" style="border-radius:0px;">
+                            View Template
+                        </button>
+                    </a>
+                       
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 col-12 template-3">
+                <div class="card" style="width: 100%;">
+                    <a href="#">
+                        <img class="card-img-top" src="../static/Images/Admin/temaplate1.PNG" alt="Card image cap">
+                    </a>
+                    <div class="card-body" style="padding:0px;">
+                      <a href="{{url_for('template')}}" class="t2-link">
+                        <button class="btn btn-block btn-primary" style="border-radius:0px;">
+                            View Template
+                        </button>
+                    </a>
+                       
+                    </div>
+                  </div>
+            </div>
+          </div>
+      </div> -->
+
+      <div class="container-fluid metrics-cnt">
+        <div class="metrics-inner">
+          <h1 class="metics-h1">
+            Sales & Traffic
+          </h1>
+        
+          <div class="overall-metrics">
+          <h3 class="metrics-h3">
+            Overall Metrics
+          </h3>
+          <div class="row first-row">
+           
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3 first-col">
+              <h4 class="inner-h4">
+                Total Users
+              </h4>
+              <h3 class="users-h3">
+                {{total_users}}
+              </h3>
+            </div>
+
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3 first-col second-col">
+              <h4 class="inner-h4">
+                Total Orders
+              </h4>
+              <h3 class="users-h3">
+                {{overall_orders}}
+              </h3>
+            </div>
+
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3 first-col third-col">
+              <h4 class="inner-h4">
+                Total Revenue
+              </h4>
+              <h3 class="users-h3">
+                ₹ {{all_price_sum}}
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="overall-metrics second-metrics">
+          <h3 class="metrics-h3 second-h3">
+            Repeat User Metrics
+          </h3>
+          <div class="row first-row">
+           
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3 first-col">
+              <h4 class="inner-h4">
+                Total Repeat Users
+              </h4>
+              <h3 class="users-h3">
+                {{repeat_user}}
+              </h3>
+            </div>
+
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3 first-col second-col">
+              <h4 class="inner-h4">
+                Repeat User Orders
+              </h4>
+              <h3 class="users-h3">
+                {{times_order}}
+              </h3>
+            </div>
+
+            <div class="col-md-3 col-12 col-sm-12 col-lg-3 first-col third-col">
+              <h4 class="inner-h4">
+                Repeat User Revenue
+              </h4>
+              <h3 class="users-h3">
+                ₹ {{total_amount}}
+              </h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+       
+      </div>
+         
+
+      
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  </script>
+
+<script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+<script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

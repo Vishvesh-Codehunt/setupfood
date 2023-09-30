@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vishmenu.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename= 'formImage/{}'.format(website_about_details[7])) }}" class="logo-img">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/template#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/template#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/template#contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/{{name}}/feedback">Review Us</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+  
+
+    <div class="container">
+        <div class="row menu-row">
+            <div class="col-md-2 col-sm-12 col-12 col-lg-2 menu-links">
+                <h1 class="menu-h1">
+                    MENU
+                </h1>
+                <ul class="menu-ul">
+                    {% for i in range(0, mylength) %}
+                    <li><a href="#{{my_dish_items[i][0]}}" style="color: black;">{{my_dish_items[i][0]}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-10 col-sm-12 col-12 col-lg-10 menu-items-row">
+                <div style="text-align: center;">
+                    <img src="{{ url_for('static', filename='Images/blog-1.jpeg') }}" class="menu-image">
+                </div>
+
+                
+                {% for i in range(0,mylength) %}
+                <div id="{{my_dish_items[i][0]}}">
+                <div class="menu-items">
+              
+                    <h1 class="type-h1">
+                        {{my_dish_items[i][0]}}
+                    </h1>
+                    
+
+                    {% for j in dish_names[i] %}
+
+                  
+                    <div class="row items">
+                        <div class="col-md-9 col-sm-9 col-lg-9 col-9">
+                    
+                        
+                            <h1 class="item-h1">
+                                {{j}}
+                            </h1>
+                               
+                            <p class="description">
+                                {{dish_descs[i][dish_names[i].index(j)]}}
+                            </p>
+
+                            <p class="price">
+                                <i class="fa fa-inr" aria-hidden="true"></i>{{dish_prices[i][dish_names[i].index(j)]}}
+                            </p>
+ 
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-lg-3 col-3 price-btn-section">
+                            <p class="row-2left">
+                                <button name="btn_minus" type="button" class="btn btn-lg decrement">-</button> 
+                                <span class="number-span">1</span>  
+                                <button  name="btn_plus" class="btn btn-lg increment"  type="button">+</button>
+                            </p>
+                            <button class="btn btn-lg price-btn 100 add-btn" value="">
+                                ADD
+                            </button>
+                        </div>
+                    </div>
+
+               
+                    {% endfor %}
+                    
+                    {% endfor %}
+
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <form id="cart" method="post" action="/{{name}}/cart">
+        <input type="hidden" id="item_list" name="item_list" value="">
+        <input type="hidden" id="price_list" name="price_list" value="">
+        <input type="hidden" id="quantity_list" name="quantity_list" value="">
+        <div class="row cart-div fixed-bottom">
+            <div class="col-sm-12 col-md-2 col-lg-2 col-12" style="text-align: center;">
+                <span id="total_item">
+                    Total Items in cart: <span id="total_length">0</span>
+                </span>
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-12" style="text-align: center;">
+                
+                <button type="submit" class="btn btn-lg  cart-btn">
+                    Go to cart
+                </button> 
+                
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-2 col-12" style="text-align: center;">
+                <div class="container" id="mobile-menu">
+                    <ul class="mobile-ul">
+                        {% for i in range(0, mylength) %}
+                        <li class="mobile-soup"><a href="#{{my_dish_items[i][0]}}" style="color: white;">{{my_dish_items[i][0]}}</a></li>
+                        {% endfor %}
+                    </ul>
+        
+                </div>
+                <p id="menu"><i class="fa fa-bars" style="position:fixed;bottom:30px;right:20px;color: white; border-radius:50%; background-color:black; height:50px; width:50px; " aria-hidden="true"></i></p>
+            </div>
+        </div>
+    </form>
+
+    
+            
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+
+<script>
+    var incrementButton = document.getElementsByClassName('increment');
+    var decrementButton = document.getElementsByClassName('decrement');
+    // console.log(incrementButton);
+    for(var i=0 ; i<incrementButton.length ; i++)
+    {
+        var button = incrementButton[i];
+        button.addEventListener('click' , function(event){
+            var buttonClicked = event.target;
+            // console.log(buttonClicked);
+            var input = buttonClicked.parentElement.children[1];
+            // console.log(buttonClicked.parentElement.children[1]);
+            var inputValue = input.innerText;
+            // console.log(inputValue);
+            var newInputValue =  parseInt(inputValue)+1;
+            input.innerText = newInputValue;
+        })
+    }
+    for(var i=0 ; i<decrementButton.length ; i++)
+    {
+        var button = decrementButton[i];
+        button.addEventListener('click' , function(event){
+            var buttonClicked = event.target;
+            var input = buttonClicked.parentElement.children[1];
+            var inputValue = input.innerText;
+            
+            if(input.innerText == 1)
+            {
+                var newInputValue =  parseInt(inputValue);
+            }
+            else{
+                var newInputValue =  parseInt(inputValue)-1;
+            }
+            input.innerText = newInputValue;
+        })
+    }
+</script>
+  
+<script>
+    var addButtons = document.getElementsByClassName('add-btn');
+    var items = [];
+    var prices = [];
+    var qty = [];
+    // var total_length = 0;
+    // total_length = items.length;
+    // document.getElementById('#total_length').innerText = total_length;
+    for(var j=0 ; j<addButtons.length ; j++)
+    {
+        var button = addButtons[j];
+        button.addEventListener('click' , function(event){
+            var addButtonclicked = event.target;
+            var parent1 = addButtonclicked.parentElement.children[0];
+            var quantity = parent1.children[1].innerText;
+            var incBtn = parent1.children[2];
+            var decBtn = parent1.children[0];
+            qty.push(quantity);
+            var parent = addButtonclicked.parentElement.parentElement.children[0].children;
+            var item = parent[0].innerText;
+            var price = parent[2].innerText;
+            items.push(item);
+            prices.push(price);
+            document.getElementById('item_list').value = items;
+            document.getElementById('price_list').value = prices;
+            document.getElementById('quantity_list').value = qty;
+            addButtonclicked.innerHTML = "ADDED";
+            addButtonclicked.disabled = true;
+            incBtn.disabled = true;
+            decBtn.disabled = true;
+            var total_length = items.length;
+            console.log(total_length)
+            document.getElementById('total_length').innerHTML = total_length;
+        }) 
+    }
+
+</script>
+    <script>
+        $(document).ready(function(){
+            $("#mobile-menu").hide();
+            $("#menu").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+            $(".mobile-soup").click(function(){
+                $("#mobile-menu").fadeToggle();
+            });
+        })
+    </script>
+ 
+
+ <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+ <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

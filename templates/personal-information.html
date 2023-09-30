@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <title>
+       {{name}} Dashboard
+   </title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/Admin/dahboard.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('dashboard')}}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('booktabledetails')}}">New Orders</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('booktabledetails')}}">Completed Orders</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('finalBill')}}">Bills</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{{url_for('customers')}}">Your Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('updateMenu')}}">Update Menu</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('updatewebsite')}}">Update Website</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('personalinformation')}}">Personal Information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="sidebar">
+    <div class="logo-details">
+      
+        <div class="logo_name"><img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo"></div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+       <a href="{{url_for('dashboard')}}" >
+        <i class="fa fa-home" aria-hidden="true"></i>
+         <span class="links_name">Home</span>
+       </a>
+       <span class="tooltip">Home</span>
+     </li>
+     <li>
+       <a href="{{url_for('booktabledetails')}}">
+        <i class="fa fa-table" aria-hidden="true"></i>
+         <span class="links_name">New Orders</span>
+       </a>
+       <span class="tooltip">New Orders</span>
+     </li>
+     <li>
+      <a href="{{url_for('completedOrders')}}">
+       <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <span class="links_name">Completed Orders</span>
+      </a>
+      <span class="tooltip">Completed Orders</span>
+    </li>
+    <li>
+      <a href="{{url_for('finalBill')}}" >
+        <i class="fa fa-file-text-o"></i>
+        <span class="links_name">Bills</span>
+      </a>
+      <span class="tooltip">Bills</span>
+    </li>
+    <li>
+      <a href="{{url_for('customers')}}">
+        <i class="fa fa-user"></i>
+        <span class="links_name">Customer Analytics</span>
+      </a>
+      <span class="tooltip">Customer Analytics</span>
+    </li>
+    <li>
+      <a href="{{url_for('updateMenu')}}">
+       <i class="fa fa-cutlery" aria-hidden="true"></i>
+        <span class="links_name">Update Menu</span>
+      </a>
+      <span class="tooltip">Update Menu</span>
+    </li>
+
+     <li>
+      <a href="{{url_for('updatewebsite')}}">
+       <i class="fa fa-globe" aria-hidden="true"></i>
+        <span class="links_name">Update Website</span>
+      </a>
+      <span class="tooltip">Update Website</span>
+    </li>
+
+    <li>
+      <a href="{{url_for('personalinformation')}}" style="background-color: #ff471a;color:white;">
+       <i class="fa fa-info" aria-hidden="true"></i>
+        <span class="links_name">Personal Information</span>
+      </a>
+      <span class="tooltip">Personal Information</span>
+    </li>
+  <li>
+        <a href="{{url_for('logout')}}">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+          <span class="links_name">Logout</span>
+        </a>
+        <span class="tooltip">Logout</span>
+      </li>
+    
+     
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">
+        <div class="container">
+
+
+            <div class="greeting-info">
+                <h2 class="greeting">
+                    Hello {{name}} !
+                </h2>
+                <h3 class="statisctics-h3">
+                    From here Download the QR code and change the password!
+                </h3>
+            </div>
+
+            <div class="mydate">
+              Date :- {{date}}
+            </div>
+        </div>
+      </div>
+
+      <div class="container template-container">
+
+        <div class="row qr-code-row">
+          <div class="col-md-8 col-12 col-sm-12 col-lg-8 qr-col" style="text-align: center;">
+              <div class="row">
+                <div class="col-md-6 col-12 col-sm-12 col-lg-6 qr-code" style="text-align: center;">
+                  <div class="row">
+                    <div class="col-md-6 col-12 col-sm-12 col-lg-6">
+                      <h3 class="store-name">
+                        {{name}}
+                      </h3>
+                    </div>
+                    <div class="col-md-6 col-12 col-sm-12 col-lg-6">
+                      <h3 class="store-id">
+                       Store ID : {{id}}
+                      </h3>
+                      
+                    </div>
+                    
+                    <h2 class="qr-title mx-auto" style="text-align: center;">
+                      QR code for Dine-in
+                    </h2>
+                    <img src="{{ url_for('static', filename= '/QRcode/Dine-in/{}'.format(my_img))}}"  class="qr-code-img">
+                    <div style="text-align: center;" class="mx-auto">
+                      <a href="{{ url_for('static', filename= 'QRcode/Dine-in/{}'.format(my_img))}}" class="btn btn-lg download-btn">
+                        <i class="fa fa-download" aria-hidden="true"></i> Download QR
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-12 col-sm-12 col-lg-6 qr-code takeaway" style="background-color: black;">
+                  <div class="row">
+                    <div class="col-md-6 col-12 col-sm-12 col-lg-6">
+                      <h3 class="store-name">
+                        {{name}}
+                      </h3>
+                    </div>
+                    <div class="col-md-6 col-12 col-sm-12 col-lg-6">
+                      <h3 class="store-id">
+                       Store ID : {{id}}
+                      </h3>
+                      
+                    </div>
+      
+                    <h2 class="qr-title mx-auto" style="text-align: center;">
+                      QR code for Takeaway
+                    </h2>
+                    <img src="{{ url_for('static', filename='QRcode/Takeaway/{}'.format(my_img)) }}" class="qr-code-img">
+                    <div style="text-align: center;" class="mx-auto">
+                      <a href="{{ url_for('static', filename='QRcode/Takeaway/{}'.format(my_img)) }}" class="btn btn-lg download-btn">
+                        <i class="fa fa-download" aria-hidden="true"></i> Download QR
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
+          </div>
+
+          <div class="col-md-4 col-12 col-sm-12 col-lg-4 form-col">
+              <h1 class="pwd-h1">
+                Update the Password
+              </h1>
+              <form action="{{url_for('personalinformation')}}" class="update-pwd-form" method="POST">
+
+                {%with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %} 
+                        <p class="err-msg" style="color:white;">{{message}}</p>
+                                {% endfor %} 
+                            {% endif %}
+                  {% endwith %}
+
+                <input type="password" class="form-control pwd-input" name="old_pwd" placeholder="Enter Old Password" required>
+                <input type="password" class="form-control pwd-input" name="new_pwd" placeholder="Enter New Password" required>
+                <input type="submit" class="btn btn-lg pwd-change-btn" value="Submit">
+              </form>
+          </div>
+         
+
+        
+        </div>
+
+
+        <div class="row update-pwd-row">
+          <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+          </div>
+          <div class="col-md-6 col-12 col-sm-12 col-lg-6 update-col">
+            
+          </div>
+          <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+            
+          </div>
+        </div>
+
+        </div>
+        </div>
+
+
+      <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+      
+        closeBtn.addEventListener("click", ()=>{
+          sidebar.classList.toggle("open");
+          menuBtnChange();//calling the function(optional)
+        });
+      
+       
+      
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+         if(sidebar.classList.contains("open")){
+           closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+         }else {
+           closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+         }
+        }
+        </script>
+      
+
+    
+      <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+      <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+      </body>
+      </html>

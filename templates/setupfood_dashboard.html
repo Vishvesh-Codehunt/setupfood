@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <title>
+       SetupFood Dashboard
+   </title>
+   <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/setupfood_dashboard.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body style="background-color: #E4E9F7;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <a class="navbar-brand" href="#">
+          <img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" style="position:relative;left:10px;" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fa fa-2x fa-bars" style="color: white;font-weight:500;font-size:34px;" aria-hidden="true"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item signup">
+            <a class="nav-link " href="/adminLogout">Logout</a>
+            </li>
+            
+        </ul>
+        </div>
+    </nav>
+  <section class="home-section">
+      <div class="text">
+        <div class="container">
+            <div class="greeting-info">
+                <h2 class="greeting">
+              
+                    Hello setupFood !
+                </h2>
+                <h3 class="statisctics-h3">
+                    Here is your overall statistics 
+                </h3>
+            </div>
+
+            <div class="mydate">
+              Date :- {{date}}
+            </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row card-row">
+            <div class="col-md-4 col-sm-12 col-12 col-lg-4 statisctics-card-1">
+                <h4 class="card-title">
+                    Total Users
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="order-number">
+                            <strong>{{total_users}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src="{{ url_for('static', filename='Images/Admin/order.png') }}" class="order-img">
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-4 col-sm-12 col-12 col-lg-4 statisctics-card-2">
+                <h4 class="card-title">
+                    Total KOTS this month
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="earning-number">
+                            <strong>{{kots_this_month}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src=" {{ url_for('static', filename='Images/Admin/money.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-12 col-lg-4 statisctics-card-3">
+                <h4 class="card-title">
+                    Total KOTS
+                </h4>
+                <div class="row inner-row">
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6">
+                        <h1 class="earning-number">
+                            <strong>{{payments_this_month}}</strong>
+                        </h1>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-6 col-lg-6 order-img-section" >
+                        <img src=" {{ url_for('static', filename='Images/Admin/money.png') }}" class="order-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row card-row">
+                <table class="table table-responsive-sm"  id="myTable">
+                    <thead class="thead-dark table-header">
+                      <tr class="table-success">
+                        <th scope="col">Sr No.</th>
+                        <th scope="col">Restaurant Name</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Total KOT </th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                        {% for i in range(total_users) %}
+                            <tr>
+                                <td>{{ i+1 }}</td>
+                                <td>{{data[i][1]}}</td>
+                                <td>{{data[i][0]}}</td>
+                                <td>{{total_kot[i][0]}}</td>
+                            </tr>
+                        {% endfor %}
+                      
+                    </tbody>
+                  </table>
+            
+              
+        </div>
+      </div>
+
+     
+     
+         
+
+      
+  </section>
+  
+  <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+  <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

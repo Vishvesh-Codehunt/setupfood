@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setupfood</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+    <div class=" form-container">
+        <div class="row form-row">
+            <div class="col-md-4 col-sm-12 col-12 col-lg-4 form-left-col ">
+                <div class="titles">
+                    <p class="form-p">
+                        <span class="number">1</span>
+                        <a href="#" class="form-link">Restaurant Information</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="number">2</span>
+                        <a href="#" class="form-link">Restaurant Contact Information</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="number">3</span>
+                        <a href="#" class="form-link">Types Of Dishes</a>
+                    </p>
+                    <p class="form-p">
+                        <span class="active">4</span>
+                        <a href="#" class="form-link">Menu Information</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-7 col-12 col-sm-12 col-lg-7 form-right-col">
+                <h1 class="form-header">
+                    Fill Up Menu Details
+                </h1>
+                <p class="form-right-p">
+                    Click on the plus icon to add more items for that dish. Once you add all the items of perticular dish then click on the submit button to add new dish.
+                </p>
+
+                  <!-- <input type="text" placeholder="E.g. Salad" required class="form-control"> -->
+
+
+                <form action="{{url_for('menuinfo')}}" method="post" class="information-form" enctype="application/JSON">
+                 
+                    <label class="form-label">
+                          Choose Type of Dish*
+                      </label>
+                    
+                      <select name="dishType" class="" id="dishType">
+                          {% for dish in dishes %}
+                             <option value="{{dish[0]}}" name="dishType">{{dish[0]}}</option>
+                          {% endfor %}
+                      </select>
+                      
+
+                      <div class="row" id="priceanditem">
+                        
+                        <div class="col-12 col-sm-12 col-lg-6 col-md-6 mt-4">
+                            <label class="form-label">
+                                Enter Item of Selected Dish*
+                            </label>
+                            <input type="hidden" name="hidden1" id="hidden1">
+                            <input type="text" class="form-control dishes" required placeholder="E.g Tossed Salad" name="dishes[0]">
+                          
+                        </div>
+                        <div class="col-12 col-sm-12 col-lg-6 col-md-6 mt-4">
+                          <label class="form-label">
+                             Enter Price of That Item*
+                          </label>
+                          <input type="hidden" name="hidden" id="hidden">
+                          <input type="number" class="form-control" required placeholder="E.g 240" name="price[0]">
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12 col-12 col-sm-12 col-lg-12 mt-4">
+                            <label class="form-label">
+                                Enter Description of that Dish*
+                            </label>
+                            <input type="hidden" name="hidden2" id="hidden2">
+                            <input type="text" class="form-control" required placeholder="E.g Paneer with green gravy" name="description[0]">
+                        </div>
+                      </div>
+
+                      
+                      <div id="newElementId"></div>
+                      <div id="dynamicCheck" class="item-btn">
+                        <input type="button" class="btn btn-lg submit-btn" value="Add New Dish" onclick="createNewElement();"/>
+                     </div>
+                     
+
+
+                    <div class="new-dish-btn">
+                      <p class="form-bottom-p">
+                          Fill the required inputs or you won't be able to jump to the next step.
+                      </p>
+                      <button type="submit" class="btn btn-lg submit-btn mb-5">Add New Dish</button>
+                    </div>
+
+
+
+                    <div class="hr-div">
+                        <hr class="bottom-hr">
+                    </div>
+                    
+                    <div class="form-numbers">
+                        <span class="form-number">1</span>
+                        <span class="form-number">2</span>
+                        <span class="form-number active">3</span>
+                    </div>
+                  </form>
+
+                  <div class="mx-auto" style="text-align: center;">
+                  <a href="{{url_for('dashboard')}}" class="btt btn-lg register-rest">
+                      Register a Restaurant
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+        
+    <script type="text/JavaScript">
+        var i=0,j=0,k=0;
+        document.getElementById("hidden1").value=j;
+        document.getElementById("hidden").value=i;
+        function createNewElement() {
+            var txtNewInputBox = document.createElement('div');
+            j=j+1;
+            i=i+1;
+            k=k+1;
+            document.getElementById("hidden1").value=j;
+            document.getElementById("hidden").value=i;
+            document.getElementById("hidden2").value=k;
+            
+            // First create a DIV element.
+            var txtNewInputBox = document.createElement('div');
+        
+            // Then add the content (a new input box) of the element.
+            txtNewInputBox.innerHTML = ' <div class="row mt-4" id="priceanditem"><div class="col"><label  class="form-label dishes">Enter Item of Selected Dish*</label><input required type="text" class="form-control" placeholder="E.g Tossed Salad" id="dishes['+j+']" name="dishes['+j+']"></div><div class="col"><label class="form-label">Enter Price of That Item*</label><input required type="number" class="form-control" placeholder="E.g 240" name="price['+i+']"></div></div>   <div class="row"> <div class="col-md-12 col-12 col-sm-12 col-lg-12 mt-4"> <label class="form-label"> Enter Description of that Dish* </label><input type="text" class="form-control" required placeholder="E.g Paneer with green gravy" name="description['+k+']"></div></div>';
+        
+            // Finally put it where it is supposed to appear.
+            document.getElementById("newElementId").appendChild(txtNewInputBox);
+        }
+        </script>
+
+   
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+   <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+   <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+   <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setupfood</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/service-details.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+
+    <section id="service-info">
+        <div class="container-fluid">
+            <div class="row">
+                 <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+                 </div>
+                <div class="col-md-6 col-12 col-sm-12 col-lg-6">
+            
+                        
+                            <div class="dine-in-column feedback-form">
+
+                            
+                            <h1 class="form-h1">
+                               Give Us a Feedback 
+                            </h1>
+                            <form action="/{{name}}/feedback" method="post" class="dine-in-form">
+                            
+                                    <div class="row">
+                                      <div class="col-12 col-sm-12 col-lg-6 col-md-6">
+                                       <label class="mylabel">
+                                           Your Name
+                                       </label>
+                                        <input type="text" name="name" class="form-control form-input" placeholder="E.g. Vishvesh Patel" required>
+                                      </div>
+                                      <div class="col-12 col-sm-12 col-lg-6 col-md-6">
+                                       <label class="mylabel">
+                                           Mobile Number
+                                       </label>
+                                        <input type="text" name="mobile" class="form-control form-input" placeholder="E.g. 9016754456" required>
+                                      </div>
+                                    </div>
+
+                                    <label class="mylabel">
+                                       Your Experience
+                                    </label>
+                                 
+                                    <select name="experience" id="cars" class="form-control" required>
+                                        <option value="5">Fully Satisfied! </option>
+                                        <option value="4">Happy but Not Fully Satisfied!</option>
+                                        <option value="3">Unhappy</option>
+                                    </select>
+
+                                      <label class="mylabel">
+                                        Do we need anything to improve?
+                                     </label>
+                                     <textarea class="form-control" name="msg" style="height:100px;" placeholder="If yes then tell us waht to improve?"></textarea>
+
+                                    <input type="submit" class="btn btn-lg submit-btn" value="Send">
+                             
+                            </form>
+                        </div>
+
+
+                     
+
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset: 240,
+          duration: 1000
+      });
+    </script>
+  <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+  <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+</html>

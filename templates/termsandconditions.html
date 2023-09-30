@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and conditions</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/terms.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        .first-image {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bring your business online with us, we will take away all your problems that's hindering your success.
+
+A Website Template that is Simple , Affordable and easy-to-use. -->
+
+
+    <section id="banner">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static', filename='Images/logo.jpeg') }}" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" style="position:relative;left:10px;" data-toggle="collapse"
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa fa-2x fa-bars"
+                            style="color: white;font-weight:500;font-size:34px;" aria-hidden="true"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        
+                        <li class="nav-item signup">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </section>
+
+    <section id="terms">
+        <div class="container privacy-container">
+            <h1 class="terms-h">
+                Terms And Conditions
+            </h1>
+            <ul class="terms-ul">
+                <li class="terms-li">
+                    
+                        
+                            These terms and conditions of the website www.setupfood.com. and instances thereof, including any and all related mobile applications ("Website") and the users of the Website ("You" or "Your" or "Yourself" or "User") describe the terms on which the Company offers You access to the Website.
+                    
+                </li>
+                <li class="terms-li">
+                    
+                    
+                    Please read the terms carefully before using the website or accessing any services through the website. Your use of the website or the services provided by the website shall signify that you have accepted all the terms and conditions.
+                </li>
+                <li class="terms-li">
+                    
+                    Any Information provided by You or anybody else on your behalf shall be considered to be correct and true in all aspects and all services will be provided on the basis of that information. So you are required to provide correct and updated information.
+                </li>
+                <li class="terms-li">
+                    
+                    If any of the services provided by setupFood has any faults and the faults are because of the information provided by You, we shall not be responsible for any such kind of post service consequences and damages occurred to You.
+                </li>
+                <li class="terms-li">
+                    
+                    For registering on our Software and accessing the services you are required to provide some personal information which is your duty to provide authenticated and updated information. If at any point in future , our team finds that the information provided by you was incorrect than the contarct will be terminated without any prior notice or your access to your dashboard will be blocked. 
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer id="footer">
+        
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-12 col-sm-12 col-lg-3" data-aos="fade-right">
+            <h3 class="links">
+              Company
+            </h3>
+            <ul class="links-ul">
+              <li class="links-li">
+                <a href="/privacy">
+                  Privacy Policy
+                </a></li>
+                <li class="links-li">
+                <a href="/refund">
+                  Refund & Cancellation
+                </a></li>
+                <li class="links-li">
+                <a href="/terms">
+                  Terms & Condition
+                </a></li>
+                <li class="links-li">
+                  <a href="/partner">
+                    Contact us
+                  </a></li>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-12 col-sm-12 col-lg-3" data-aos="fade-right">
+            <h3 class="links">
+              Address
+            </h3>
+            <ul class="links-ul">
+              <li class="links-li">
+                  B-302 Pramukh Exotica,
+                </li>
+                <li class="links-li">
+                  Kudasan-Por road,
+                </li>
+                <li class="links-li">
+                  near Kansar Garden Restaurant,Kudasan
+                </li>
+                <li class="links-li">
+                  Gandhinagar 382421 
+                </li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-12 col-sm-12 col-lg-3" data-aos="fade-right">
+            <h3 class="links">
+              Contact Info
+            </h3>
+            <ul class="links-ul">
+              <li class="links-li contact-li">
+               <i class="fa fa-phone-square" aria-hidden="true" style="font-size: 18px; margin-right:10px;"></i>  <a class="phone-number" style="font-size:16px;" href="tel:7861984482">7861984482</a>
+                </li>
+               
+                <li class="links-li contact-li">
+                  <i class="fa fa-envelope-square" aria-hidden="true" style="font-size:18px; margin-right:10px;"></i><a href="mailto:info@setupfood.com">info@setupfood.com</a>  
+                </li>
+              
+            </ul>
+          </div>
+          <div class="col-md-3 col-12 col-sm-12 col-lg-3" data-aos="fade-right">
+            <h3 class="links">
+              Subscribe to our Newsletter
+            </h3>
+            <form class="footer-form" action="{{url_for('newsletter')}}" method="post">
+              <input type="email" name="email" required placeholder="Your Email" class="form-control request-input">
+              <button class="btn btn-lg request-btn">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <hr class="fooer-hr">
+
+        <div class="row">
+          <div class="col-md-4 col-12 col-sm-12 col-lg-4">
+            <p class="copyright">© 2022 Setupfood</p>
+          </div>
+          <div class="col-md-4 col-12 col-sm-12 col-lg-4">
+
+          </div>
+          <div class="col-md-4 col-12 col-sm-12 col-lg-4" style="text-align:center;">
+            <a href="https://www.facebook.com/SetupFood-110376855022483" class="social-links"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/setupfood/" class="social-links"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/SetupFood" class="social-links"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+           
+          </div>
+        </div>
+      </div>
+      
+    </footer>
+
+    <div class="arrow">
+        <a href="#banner"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 240,
+            duration: 1000
+        });
+    </script>
+  
+  <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+    <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

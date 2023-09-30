@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login TakeAway Order</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/logo.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/takeorder-login.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+   
+
+    <section id="takeorders">
+        <div class="container">
+            <div class="row login-row">
+                <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+
+                </div>
+                <div class="col-md-6 col-12 col-sm-12 col-lg-6 takeorders-col">
+                    <h1 class="takeorders-h1">
+                        Waiter Login
+                    </h1>
+                    <form action="{{url_for('takeorder')}}" method="POST" class="login-form">
+                        {%with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %} 
+                    <p class="err-msg" style="color:red;">{{message}}</p>
+                            {% endfor %} 
+                        {% endif %}
+                    {% endwith %}
+                        <label>
+                            Email Address
+                        </label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                        <label>
+                            Your Password 
+                        </label>
+                        <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
+                        <input type="submit" class="btn btn-lg login-btn" value="Login">
+                    </form>
+                </div>
+                <div class="col-md-3 col-12 col-sm-12 col-lg-3">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 240,
+            duration: 1000
+        });
+    </script>
+   <script src="{{ url_for('static', filename='bootstrap/myjquery.js') }}"></script>
+    
+   <script src="{{ url_for('static', filename='bootstrap/popper.js') }}"></script>
+   <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+</body>
+
+</html>
